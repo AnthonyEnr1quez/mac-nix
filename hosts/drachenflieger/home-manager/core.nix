@@ -17,7 +17,8 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # nixpkgs.config.allowUnfree = true;
+  programs.bat.enable = true;
+  programs.exa.enable = true;
 
   ## lets add some packages
   home.packages = with pkgs; [
@@ -34,6 +35,7 @@
 
 
     unar
+    postman
     # jetbrains.idea-community
     # docker
     #postman, enable unfree

@@ -22,6 +22,8 @@
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          # https://github.com/nix-community/home-manager/issues/2942#issuecomment-1249356730
+          nixpkgs.config.allowUnfree = true;
           home-manager.users.ant = import ./hosts/drachenflieger/home-manager;
         }
       ];
