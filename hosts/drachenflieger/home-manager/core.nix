@@ -54,15 +54,6 @@
     #iterm2 - do I need it?
   ];
 
-  ## git config
-  # programs.git = {
-  #   enable = true;
-  #   userEmail = "32233059+AnthonyEnr1quez@users.noreply.github.com";
-  #   userName = "AnthonyEnr1quez";
-
-  #   lfs.enable = true;
-  # };
-
   ## ssh
   programs.ssh = {
     enable = true;
@@ -71,26 +62,6 @@
         AddKeysToAgent yes
         IdentityFile ~/.ssh/id_ed25519_github
     '';
-  };
-
-  programs.zsh = {
-    enable = true;
-    autocd = true;
-    dotDir = ".config/zsh";
-    enableAutosuggestions = true;
-    enableCompletion = true;
-
-    history = {
-      expireDuplicatesFirst = true;
-      extended = true;
-      save = 100000;
-      size = 100000;
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      theme = "crunch";
-    };
   };
 
   programs.vscode = {
