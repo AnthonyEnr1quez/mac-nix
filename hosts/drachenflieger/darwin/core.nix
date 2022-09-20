@@ -18,42 +18,6 @@
     home = "/Users/ant";
   };
 
-  ### lets try to config something on my mac
-  system.defaults = {
-    # login window settings TODO these dont work on monterry
-    loginwindow = {
-      # disable guest account
-      GuestEnabled = false;
-      # show name instead of username
-      SHOWFULLNAME = false;
-      # auto login
-      autoLoginUser = "ant";
-    };
-
-
-    # file viewer settings
-    finder = {
-      AppleShowAllExtensions = true;
-      AppleShowAllFiles = true;
-      FXEnableExtensionChangeWarning = false;
-    };
-
-    screencapture.disable-shadow = true;
-
-    # dock settings
-    dock = {
-      # auto show and hide dock
-      autohide = true;
-      # remove delay for showing dock
-      autohide-delay = 0.0;
-      # how fast is the dock showing animation
-      autohide-time-modifier = 1.0;
-    };
-
-    ## apperance
-    NSGlobalDomain.AppleInterfaceStyle = "Dark";
-  };
-
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
