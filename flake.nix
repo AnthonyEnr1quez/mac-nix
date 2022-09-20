@@ -18,7 +18,7 @@
 
       system = "x86_64-darwin"; # "x86_64-darwin" if you're using a pre M1 mac
       modules = [
-        ./hosts/drachenflieger/default.nix
+        ./hosts/drachenflieger/darwin
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
