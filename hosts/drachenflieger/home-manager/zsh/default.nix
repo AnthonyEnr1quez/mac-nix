@@ -14,6 +14,7 @@
     };
 
     initExtra = ''
+      ## TODO remove abbr and move to shell aliases? maybe
       # git
       abbr gcm="git commit -m"
       abbr gcam="git add . && git commit -m"
@@ -41,8 +42,8 @@
       #abbr idea="open -na \"IntelliJ IDEA.app\" --args \"\$@\""
 
       # modern unix https://github.com/ibraheemdev/modern-unix
-      abbr cat="bat"
-      abbr ls="exa -1"
+      # abbr cat="bat"
+      # abbr ls="exa -1"
                               '';
 
     oh-my-zsh = {

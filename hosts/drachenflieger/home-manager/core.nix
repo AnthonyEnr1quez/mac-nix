@@ -53,23 +53,4 @@
     #pgadmin4
     #iterm2 - do I need it?
   ];
-
-  ## ssh
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host github.com
-        AddKeysToAgent yes
-        IdentityFile ~/.ssh/id_ed25519_github
-    '';
-  };
-
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
-      # alphabotsec.vscode-eclipse-keybindings   installed manually
-    ];
-  };
 }
