@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "ant";
@@ -39,7 +39,7 @@
     # jetbrains.idea-community
     # docker
     #postman, enable unfree
-    #discord
+    discord
     #element-desktop
     #slack
     # jetbrains.goland
