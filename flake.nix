@@ -1,5 +1,5 @@
 {
-  description = "My second attemp at my first nix flake";
+  description = "My second attempt at my first nix flake";
 
   inputs = {
       # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";

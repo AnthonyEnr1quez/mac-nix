@@ -34,7 +34,11 @@
     # file viewer settings
     finder = {
       AppleShowAllExtensions = true;
+      AppleShowAllFiles = true;
+      FXEnableExtensionChangeWarning = false;
     };
+
+    screencapture.disable-shadow = true;
 
     # dock settings
     dock = {
@@ -46,5 +50,53 @@
       autohide-time-modifier = 1.0;
     };
 
+    ## apperance
+    NSGlobalDomain.AppleInterfaceStyle = "Dark";
+  };
+
+  fonts = {
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "Hack" ]; })
+    ];
+  };
+
+  homebrew = {
+    enable = true;
+    autoUpdate = false;
+    global = {
+      brewfile = true;
+      # noLock = true;
+    };
+    onActivation.cleanup = "zap";
+
+    taps = [
+      "homebrew/cask"
+      "homebrew/cask-versions"
+    ];
+    casks = [
+      "alt-tab"
+      "balenaetcher"
+      "bitwarden"
+      # "docker"
+      "firefox-developer-edition"
+      "flux"
+      "mullvadvpn"
+      ### "insomnia"
+      ###"keepingyouawake"
+      "linearmouse"
+      "signal"
+      "steam"
+      "geekbench"
+      "unetbootin"
+      ### "macfuse"
+      ###"impactor"
+      ###"blobsaver"
+      # "obsidian"
+      # "raycast"
+      ####"sensiblesidebuttons"
+      ####"the-unarchiver"
+      "vlc"
+    ];
   };
 }

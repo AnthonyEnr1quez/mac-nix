@@ -19,11 +19,41 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # nixpkgs.config.allowUnfree = true;
+
   ## lets add some packages
   home.packages = with pkgs; [
     bottom
     git
     bat
+    # bash ?
+    # coreutils ?
+    # gawk
+    # htop
+    # gnu-sed
+    # zlib
+    go_1_19
+
+
+    unar
+    # jetbrains.idea-community
+    # docker
+    #postman, enable unfree
+    #discord
+    #element-desktop
+    #slack
+    # jetbrains.goland
+
+    kubectl
+    # kubelogin
+    # kubectx - manage with zsh?
+    # kubernetes-helm-wrapped?
+    # git-crypt
+    #gnupg
+    #gopass
+    #postgresql
+    #pgadmin4
+    #iterm2 - do I need it?
   ];
 
   ## git config
@@ -42,4 +72,34 @@
         IdentityFile ~/.ssh/id_ed25519_github
     '';
   };
+
+  programs.zsh = {
+    enable = true;
+    autocd = true;
+    dotDir = ".config/zsh";
+    enableAutosuggestions = true;
+    enableCompletion = true;
+
+    history = {
+      expireDuplicatesFirst = true;
+      extended = true;
+      save = 100000;
+      size = 100000;
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "crunch";
+    };
+  };
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+      # alphabotsec.vscode-eclipse-keybindings   installed manually
+    ];
+  };
+
 }
