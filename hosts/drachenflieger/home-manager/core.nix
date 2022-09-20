@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: ### This is home manager config
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -57,11 +57,13 @@
   ];
 
   ## git config
-  programs.git = {
-    enable = true;
-    userEmail = "32233059+AnthonyEnr1quez@users.noreply.github.com";
-    userName = "AnthonyEnr1quez";
-  };
+  # programs.git = {
+  #   enable = true;
+  #   userEmail = "32233059+AnthonyEnr1quez@users.noreply.github.com";
+  #   userName = "AnthonyEnr1quez";
+
+  #   lfs.enable = true;
+  # };
 
   ## ssh
   programs.ssh = {
