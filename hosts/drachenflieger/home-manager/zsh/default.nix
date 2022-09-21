@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
+  # see also https://github.com/Yumasi/nixos-home/blob/master/zsh.nix#L89
   home.file = {
-    ".config/zsh/.zsh_abbr".source = ./.zsh_abbr;
+    ".config/zsh/zsh_abbr".source = ./zsh_abbr;
   };
 
   programs.zsh = {
@@ -24,36 +25,14 @@
     };
 
     sessionVariables = {
-      ABBR_USER_ABBREVIATIONS_FILE = "/Users/ant/.config/zsh/.zsh_abbr";
+      ABBR_USER_ABBREVIATIONS_FILE = "/Users/ant/.config/zsh/zsh_abbr";
     };
 
     # shellAliases = {
     #   "..." = "../..";
     # };
 
-    ## TODO move to external file? initExtra = builtins.readFile ./zshrc-extra;
-    initExtra = ''
-      ## history
-      setopt hist_reduce_blanks # remove superfluous blanks from history items
-      setopt inc_append_history # save history entries as soon as they are entered
-
-      ## completions https://thevaluable.dev/zsh-completion-guide-examples/
-      setopt auto_cd # cd by typing directory name if it's not a command
-      setopt auto_list # automatically list choices on ambiguous completion
-      setopt auto_menu # automatically use menu completion
-      setopt always_to_end # move cursor to end if word had one match
-
-      # https://zsh.sourceforge.io/Doc/Release/Completion-System.html
-      zstyle ':completion:*' menu select # use tab/arrows to select completion in menu
-      zstyle ':completion:*' completer _expand _extensions _complete _ignored _approximate # enable approximate matches for completion
-
-
-      # TODODODODO
-      alias -g ...='../..'
-      alias -g ....='../../..'
-      alias -g .....='../../../..'
-      alias -g ......='../../../../..'
-                              '';
+    initExtra = builtins.readFile ./zsh_extra;
 
     # oh-my-zsh = {
     #   enable = true;
