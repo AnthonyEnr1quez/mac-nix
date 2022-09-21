@@ -19,14 +19,14 @@
     darwinConfigurations.drachenflieger = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       modules = [
-        ./hosts/drachenflieger/darwin
+        ./modules/darwin
         home-manager.darwinModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.ant = import ./hosts/drachenflieger/home-manager;
+            users.ant = import ./modules/home-manager;
           };
-          
+
           # https://github.com/nix-community/home-manager/issues/2942#issuecomment-1249356730
           nixpkgs.config.allowUnfree = true;
         }
