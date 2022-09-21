@@ -23,7 +23,3 @@ abbr mqi="mvn clean install -DskipTests"
 
 # IDEA todo setup cross platform
 #abbr idea="open -na \"IntelliJ IDEA.app\" --args \"\$@\""
-
-# modern unix https://github.com/ibraheemdev/modern-unix
-abbr cat="bat"
-abbr ls="exa -1"

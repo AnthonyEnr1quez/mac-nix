@@ -6,6 +6,7 @@
 
   programs.zsh = {
     enable = true;
+
     autocd = true;
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
@@ -19,25 +20,28 @@
       size = 100000;
       share = true;
     };
-
     historySubstringSearch = {
       enable = true;
     };
+
+    initExtra = builtins.readFile ./zshrc_extra;
 
     sessionVariables = {
       ABBR_USER_ABBREVIATIONS_FILE = "/Users/ant/.config/zsh/zsh_abbr";
     };
 
-    # shellAliases = {
-    #   "..." = "../..";
-    # };
+    shellAliases = {
+      # https://github.com/ibraheemdev/modern-unix
+      cat = "bat";
+      ls= "exa -1";
+    };
 
-    initExtra = builtins.readFile ./zsh_extra;
-
-    # oh-my-zsh = {
-    #   enable = true;
-    #   theme = "crunch";
-    # };
+    shellGlobalAliases = {
+      "..." = "../..";
+      "...." = "../../..";
+      "....." = "../../../..";
+      "......" = "../../../../..";
+    };
 
     plugins = [
       {
@@ -95,7 +99,6 @@
         };
         file = "lib/theme-and-appearance.zsh";
       }
-      ## TODO fix dir on right side
       {
         name = "crunch";
         src = pkgs.fetchFromGitHub {
@@ -106,25 +109,16 @@
         };
         file = "themes/crunch.zsh-theme";
       }
+      # TODO
       # {
       #   name = "kube-ps1 ";
       #   src = pkgs.fetchFromGitHub {
       #     owner = "jonmosco";
       #     repo = "kube-ps1 ";
       #     rev = "c432ec18b81a03cff835678298650dca74731945";
-      #     sha256 = "1iz4l8777i52gfynzpf6yybrmics8g4i3f1xs3rqsr40bb89igrs";
+      #     sha256 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
       #   };
       #   file = "kube-ps1.sh";
-      # }
-      # {
-      #   name = "agkozak-zsh-prompt";
-      #   src = fetchFromGitHub {
-      #     owner = "agkozak";
-      #     repo = "agkozak-zsh-prompt";
-      #     rev = "v3.7.0";
-      #     sha256 = "1iz4l8777i52gfynzpf6yybrmics8g4i3f1xs3rqsr40bb89igrs";
-      #   };
-      #   file = "agkozak-zsh-prompt.plugin.zsh";
       # }
     ];
   };

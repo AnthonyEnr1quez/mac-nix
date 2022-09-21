@@ -1,12 +1,16 @@
 { pkgs, ... }: {
   homebrew = {
     enable = true;
-    autoUpdate = false;
+
     global = {
+      autoUpdate = false;
       brewfile = true;
-      # noLock = true;
     };
-    onActivation.cleanup = "zap";
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+      upgrade = true;
+    };
 
     taps = [
       "homebrew/cask"
@@ -16,25 +20,24 @@
       "alt-tab"
       "balenaetcher"
       "bitwarden"
+      # "blobsaver"
       # "docker"
       "firefox-developer-edition"
       "flux"
-      "mullvadvpn"
-      ### "insomnia"
-      ###"keepingyouawake"
-      "linearmouse"
-      "signal"
-      "steam"
       "geekbench"
-      "unetbootin"
-      ### "macfuse"
-      ###"impactor"
-      ###"blobsaver"
+      # "impactor"
+      # "insomnia"
+      # "keepingyouawake"
+      "linearmouse"
+      # "macfuse"
+      "mullvadvpn"
       # "obsidian"
       # "raycast"
-      ####"sensiblesidebuttons"
-      ####"the-unarchiver"
-      "vlc"
+      # "sensiblesidebuttons"
+      "signal"
+      "steam"
+      # "unetbootin"
+      # "vlc"
     ];
   };
 }
