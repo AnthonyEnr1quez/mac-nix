@@ -28,6 +28,7 @@
 
     sessionVariables = {
       ABBR_USER_ABBREVIATIONS_FILE = "/Users/ant/.config/zsh/zsh_abbr";
+      KUBECONFIG = "/Users/ant/.config/kube/config";
     };
 
     shellAliases = {
@@ -109,17 +110,16 @@
         };
         file = "themes/crunch.zsh-theme";
       }
-      # TODO
-      # {
-      #   name = "kube-ps1 ";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "jonmosco";
-      #     repo = "kube-ps1 ";
-      #     rev = "c432ec18b81a03cff835678298650dca74731945";
-      #     sha256 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-      #   };
-      #   file = "kube-ps1.sh";
-      # }
+      {
+        name = "kube-ps1 ";
+        src = pkgs.fetchFromGitHub {
+          owner = "jonmosco";
+          repo = "kube-ps1";
+          rev = "db95d30d8f154ac6677a3232745d0326f29d72c4";
+          sha256 = "sha256-2UrUOslk60pl15DPS5KwolX/xp3TpWLZKuF2D7jup2o=";
+        };
+        file = "kube-ps1.sh";
+      }
     ];
   };
 }

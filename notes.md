@@ -61,20 +61,21 @@ existing file has unknown content ff08c12813680da98c4240328f828647b67a65ba7aa89c
 3. Figure out how to just build home manager changes
 4. Git Signing Keys
 5. kubectl
-  - kubeconfig for home cluster in .config folder?
+  - kubeconfig auto into .config
+  - .kube folder?
   - kubectl aliases from zshrc
-  - kubeps1 prompt
+
 6. Dock config, use dock util?
 7. Dir colors, needed anymore when using exa?, config exa?
 8. Git config
   - lfs
   - ssh instead of
-  - vim as commit editor
 9. Go settings (root, path)
 10. Jetbrains
   - install
   - keybindings
   - plugins
+  
 11. other osx defaults, do I have to open pr to nix darwin?
 12. deal with temp dir in playbook repo
 13. https://apple.stackexchange.com/questions/199654/how-to-change-system-hide-all-keyboard-shortcut
