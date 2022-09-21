@@ -23,8 +23,8 @@
   ## lets add some packages
   home.packages = with pkgs; [
     bottom
-    git
-    bat
+    git ## TODO, is this handled with my git config?
+    # bat enabled above
     # bash ?
     # coreutils ?
     # gawk
@@ -47,6 +47,7 @@
     kubectl
     # kubelogin
     # kubectx - manage with zsh?
+    # do I need kubens ?
     # kubernetes-helm-wrapped?
     # git-crypt
     #gnupg
@@ -54,5 +55,7 @@
     #postgresql
     #pgadmin4
     #iterm2 - do I need it?
+
+    #ansible
   ];
 }
