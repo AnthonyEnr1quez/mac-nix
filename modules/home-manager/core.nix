@@ -33,12 +33,12 @@
 
     bat.enable = true;
     exa.enable = true;
+    vim.enable = true;
 
     # TODO explore more
     # direnv.enable = true;
     # firefox.enable = true;
     # go.enable = true;
-    # vim.enable = true;
 
     # gnupg.enable = true;
     # jq.enable = true;
