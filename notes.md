@@ -53,9 +53,6 @@ error: not linking environment.etc."nix/nix.conf" because /etc/nix/nix.conf alre
 existing file has unknown content ff08c12813680da98c4240328f828647b67a65ba7aa89c022bd8072cba862cf1, move and activate again to apply
 ```
 2. App settings
-  - Linear mouse
-  - Alt-tab
-  - VSCode
   - Firefox
 
 3. Figure out how to just build home manager changes
@@ -82,3 +79,4 @@ existing file has unknown content ff08c12813680da98c4240328f828647b67a65ba7aa89c
 14. Do I need iterm or kitty, will apple terminal be enough?
 15. Check that ssh key is in github with api
 16. https://k3d.io/v5.4.1/usage/advanced/podman/
+17. https://georgegarside.com/blog/macos/imac-m1-accent-colours-any-mac/

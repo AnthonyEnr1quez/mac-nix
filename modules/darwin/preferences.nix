@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   system.defaults = {
     dock = {
       autohide = true;
@@ -12,8 +12,9 @@
       FXEnableExtensionChangeWarning = false;
     };
 
+    # TODO these might not work with latest osx
     loginwindow = {
-      autoLoginUser = "ant";
+      autoLoginUser = "${config.user.name}";
       GuestEnabled = false;
       SHOWFULLNAME = false;
     };

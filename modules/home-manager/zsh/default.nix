@@ -15,7 +15,7 @@
     history = {
       expireDuplicatesFirst = true;
       extended = true;
-      path = "/Users/ant/.config/zsh/zsh_history";
+      path = "${config.home.homeDirectory}/.config/zsh/zsh_history";
       save = 100000;
       size = 100000;
       share = true;
@@ -27,8 +27,8 @@
     initExtra = builtins.readFile ./zshrc_extra;
 
     sessionVariables = {
-      ABBR_USER_ABBREVIATIONS_FILE = "/Users/ant/.config/zsh/zsh_abbr";
-      KUBECONFIG = "/Users/ant/.config/kube/config";
+      ABBR_USER_ABBREVIATIONS_FILE = "${config.home.homeDirectory}/.config/zsh/zsh_abbr";
+      KUBECONFIG = "${config.home.homeDirectory}/.config/kube/config";
     };
 
     shellAliases = {

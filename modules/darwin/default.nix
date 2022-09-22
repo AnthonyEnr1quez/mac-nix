@@ -1,7 +1,17 @@
 { pkgs, ... }: {
   imports = [
-    ./core.nix
+    ../common.nix
     ./brew.nix
     ./preferences.nix
   ];
+
+  # Make sure the nix daemon always runs
+  services.nix-daemon.enable = true;
+
+  fonts = {
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "Hack" ]; })
+    ];
+  };
 }
