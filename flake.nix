@@ -14,9 +14,16 @@
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
       };
+
+      nixos-wsl = {
+        url = "github:nix-community/NixOS-WSL";
+      #   inputs.flake-compat.follows = "flake-compat";
+      #   inputs.flake-utils.follows = "flake-utils";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
   };
   
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nixos-wsl, ... }: 
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -39,36 +46,22 @@
           specialArgs = { inherit self inputs nixpkgs; };
         };
 
-      # generate a home-manager configuration usable on any unix system
-      # with overlays and any extraModules applied
-      homePrefix = system: if isDarwin system then "/Users" else "/home";
-      mkHomeConfig =
-        { username ? "ant"
-        , system ? "x86_64-linux"
+      # generate a base nixos configuration with the
+      # specified overlays, hardware modules, and any extraModules applied
+      mkNixosConfig =
+        { system ? "x86_64-linux"
         , nixpkgs ? inputs.nixpkgs
         , stable ? inputs.stable
         , baseModules ? [
-            ./modules/home-manager
-            {
-              home = {
-                inherit username;
-                homeDirectory = "${homePrefix system}/${username}";
-                # sessionVariables = {
-                #   NIX_PATH =
-                #     "nixpkgs=${nixpkgs}:stable=${stable}\${NIX_PATH:+:}$NIX_PATH";
-                # };
-              };
-            }
+            home-manager.nixosModules.home-manager
           ]
         , extraModules ? [ ]
         }:
-        inputs.home-manager.lib.homeManagerConfiguration rec {
-          pkgs = import nixpkgs {
-            inherit system;
-          };
-          extraSpecialArgs = { inherit self inputs nixpkgs; };
+        nixpkgs.lib.nixosSystem {
+          inherit system;
           modules = baseModules ++ extraModules;
-        };
+          specialArgs = { inherit self inputs nixpkgs; };
+        };  
   in
   {
     darwinConfigurations = {
@@ -77,9 +70,22 @@
       };
     };
 
-    homeConfigurations = {
-      wsl = mkHomeConfig {
-        extraModules = [ ./profiles/home-manager/personal.nix ];
+    nixosConfigurations = {
+      nixos = mkNixosConfig {
+        extraModules = [ 
+          ./modules/nixos
+          nixos-wsl.nixosModules.wsl
+          {
+            wsl = {
+              enable = true;
+              automountPath = "/mnt";
+              defaultUser = "ant";
+              startMenuLaunchers = true;
+              wslConf.network.hostname = "mothership";
+            };
+          }
+          ./profiles/personal.nix
+        ];
       };
     };
   };

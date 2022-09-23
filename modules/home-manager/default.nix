@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./apps.nix
+    # ./apps.nix TODO
     ./git
     ./ide
     ./ssh
