@@ -71,7 +71,7 @@
     };
 
     nixosConfigurations = {
-      nixos = mkNixosConfig {
+      mothership = mkNixosConfig {
         extraModules = [ 
           ./modules/nixos
           nixos-wsl.nixosModules.wsl
