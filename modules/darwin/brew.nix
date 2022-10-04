@@ -12,6 +12,10 @@
       upgrade = true;
     };
 
+    brews = [ 
+      # "docker"
+    ];
+
     taps = [
       "homebrew/cask"
       "homebrew/cask-versions"
@@ -21,7 +25,7 @@
       "balenaetcher"
       "bitwarden"
       # "blobsaver"
-      # "docker"
+      "docker" # TODO, can I replace this w/ podman
       "firefox-developer-edition"
       "flux"
       "geekbench"
