@@ -65,8 +65,11 @@
         src = pkgs.fetchFromGitHub {
           owner = "ohmyzsh";
           repo = "ohmyzsh";
-          rev = "7dcabbe6826073ef6069c8a4b6f9a943f00d2df0";
-          sha256 = "Mk2GQh7Yh0cyklSEIutIIUEQNMAcPC1i3QT5K6lCEt8=";
+          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
+          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+          sparseCheckout = ''
+            plugins/sudo
+          '';
         };
         file = "plugins/sudo/sudo.plugin.zsh";
       }
@@ -75,8 +78,11 @@
         src = pkgs.fetchFromGitHub {
           owner = "ohmyzsh";
           repo = "ohmyzsh";
-          rev = "7dcabbe6826073ef6069c8a4b6f9a943f00d2df0";
-          sha256 = "Mk2GQh7Yh0cyklSEIutIIUEQNMAcPC1i3QT5K6lCEt8=";
+          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
+          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+          sparseCheckout = ''
+            lib/
+          '';
         };
         file = "lib/git.zsh";
       }
@@ -85,8 +91,11 @@
         src = pkgs.fetchFromGitHub {
           owner = "ohmyzsh";
           repo = "ohmyzsh";
-          rev = "7dcabbe6826073ef6069c8a4b6f9a943f00d2df0";
-          sha256 = "Mk2GQh7Yh0cyklSEIutIIUEQNMAcPC1i3QT5K6lCEt8=";
+          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
+          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+          sparseCheckout = ''
+            lib/
+          '';
         };
         file = "lib/prompt_info_functions.zsh";
       }
@@ -95,8 +104,11 @@
         src = pkgs.fetchFromGitHub {
           owner = "ohmyzsh";
           repo = "ohmyzsh";
-          rev = "7dcabbe6826073ef6069c8a4b6f9a943f00d2df0";
-          sha256 = "Mk2GQh7Yh0cyklSEIutIIUEQNMAcPC1i3QT5K6lCEt8=";
+          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
+          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+          sparseCheckout = ''
+            lib/
+          '';
         };
         file = "lib/theme-and-appearance.zsh";
       }
@@ -105,8 +117,11 @@
         src = pkgs.fetchFromGitHub {
           owner = "ohmyzsh";
           repo = "ohmyzsh";
-          rev = "7dcabbe6826073ef6069c8a4b6f9a943f00d2df0";
-          sha256 = "Mk2GQh7Yh0cyklSEIutIIUEQNMAcPC1i3QT5K6lCEt8=";
+          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
+          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+          sparseCheckout = ''
+            themes/
+          '';
         };
         file = "themes/crunch.zsh-theme";
       }
@@ -115,8 +130,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "jonmosco";
           repo = "kube-ps1";
-          rev = "db95d30d8f154ac6677a3232745d0326f29d72c4";
-          sha256 = "sha256-2UrUOslk60pl15DPS5KwolX/xp3TpWLZKuF2D7jup2o=";
+          rev = "c432ec18b81a03cff835678298650dca74731945";
+          sha256 = "DCGv601yzLCvEiPRNUzT4DNKIt6jlCGtPZdq5/wmY4g=";
         };
         file = "kube-ps1.sh";
       }
