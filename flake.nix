@@ -32,60 +32,59 @@
       # specified hostname, overlays, and any extraModules applied
       mkDarwinConfig =
         { system ? "x86_64-darwin"
+        , host
         , nixpkgs ? inputs.nixpkgs
         , stable ? inputs.stable ## TODO is this needed with no overlays?
         , baseModules ? [
             home-manager.darwinModules.home-manager
             ./modules/darwin
+            ./hosts
+            ./profiles
           ]
+        , profile ? "personal"
         , extraModules ? [ ]
         }:
         inputs.darwin.lib.darwinSystem {
           inherit system;
           modules = baseModules ++ extraModules;
-          specialArgs = { inherit self inputs nixpkgs; };
+          specialArgs = { inherit self inputs nixpkgs host profile; };
         };
 
       # generate a base nixos configuration with the
       # specified overlays, hardware modules, and any extraModules applied
       mkNixosConfig =
         { system ? "x86_64-linux"
+        , host
         , nixpkgs ? inputs.nixpkgs
         , stable ? inputs.stable
         , baseModules ? [
             home-manager.nixosModules.home-manager
+            ./modules/nixos
+            ./hosts
+            ./profiles
           ]
+        , profile ? "personal"
         , extraModules ? [ ]
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           modules = baseModules ++ extraModules;
-          specialArgs = { inherit self inputs nixpkgs; };
+          specialArgs = { inherit self inputs nixpkgs host profile; };
         };  
   in
   {
     darwinConfigurations = {
       drachenflieger = mkDarwinConfig {
-        extraModules = [ ./profiles/personal.nix ];
+        host = "drachenflieger";
       };
     };
 
     nixosConfigurations = {
       mothership = mkNixosConfig {
-        extraModules = [ 
-          ./modules/nixos
-          nixos-wsl.nixosModules.wsl
-          {
-            wsl = {
-              enable = true;
-              automountPath = "/mnt";
-              defaultUser = "ant";
-              startMenuLaunchers = true;
-              wslConf.network.hostname = "mothership";
-              docker-desktop.enable = true;
-            };
-          }
-          ./profiles/personal.nix
+        host = "mothership";
+        extraModules = [
+          nixos-wsl.nixosModules.wsl 
+          ./modules/wsl
         ];
       };
     };

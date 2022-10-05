@@ -52,7 +52,7 @@ with lib;
   # users.users.nixos.isNormalUser = true;
   user.isNormalUser = true;
 
-  networking.hostName = "mothership";
+  networking.hostName = "${config.host.name}";
 
   # Enable nix flakes
   nix.package = pkgs.nixVersions.stable;

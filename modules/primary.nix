@@ -15,6 +15,11 @@ in
       type = types.attrs;
       default = { };
     };
+
+    host = mkOption {
+      type = types.attrs;
+      default = { };
+    };
   };
 
   config = {
