@@ -52,8 +52,10 @@ with lib;
   # users.users.nixos.isNormalUser = true;
   user.isNormalUser = true;
 
+  networking.hostName = "mothership";
+
   # Enable nix flakes
-  nix.package = pkgs.nixFlakes;
+  nix.package = pkgs.nixVersions.stable;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';

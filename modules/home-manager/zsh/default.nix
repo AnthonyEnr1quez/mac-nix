@@ -67,9 +67,9 @@
           repo = "ohmyzsh";
           rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
           sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          sparseCheckout = ''
-            plugins/sudo
-          '';
+          # sparseCheckout = ''
+          #   plugins/sudo
+          # '';
         };
         file = "plugins/sudo/sudo.plugin.zsh";
       }
@@ -80,9 +80,9 @@
           repo = "ohmyzsh";
           rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
           sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          sparseCheckout = ''
-            lib/
-          '';
+          # sparseCheckout = ''
+          #   lib/
+          # '';
         };
         file = "lib/git.zsh";
       }
@@ -93,9 +93,9 @@
           repo = "ohmyzsh";
           rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
           sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          sparseCheckout = ''
-            lib/
-          '';
+          # sparseCheckout = ''
+          #   lib/
+          # '';
         };
         file = "lib/prompt_info_functions.zsh";
       }
@@ -106,9 +106,9 @@
           repo = "ohmyzsh";
           rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
           sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          sparseCheckout = ''
-            lib/
-          '';
+          # sparseCheckout = ''
+          #   lib/
+          # '';
         };
         file = "lib/theme-and-appearance.zsh";
       }
@@ -119,9 +119,9 @@
           repo = "ohmyzsh";
           rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
           sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          sparseCheckout = ''
-            themes/
-          '';
+          # sparseCheckout = ''
+          #   themes/
+          # '';
         };
         file = "themes/crunch.zsh-theme";
       }

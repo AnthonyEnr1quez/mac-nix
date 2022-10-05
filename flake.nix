@@ -82,6 +82,7 @@
               defaultUser = "ant";
               startMenuLaunchers = true;
               wslConf.network.hostname = "mothership";
+              docker-desktop.enable = true;
             };
           }
           ./profiles/personal.nix
