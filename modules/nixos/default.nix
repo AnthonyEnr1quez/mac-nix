@@ -40,7 +40,7 @@
 with lib;
 {
   imports = [
-    "${modulesPath}/profiles/minimal.nix"
+    # "${modulesPath}/profiles/minimal.nix" disable to get man pages https://github.com/NixOS/nixpkgs/blob/410496d0f378b7510060cd8bff4f77bd101b4af8/nixos/modules/profiles/minimal.nix#L14
     ../common.nix
   ];
 
