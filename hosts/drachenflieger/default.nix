@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: {
-  imports = [ ./apps.nix ];
-
+{ config, pkgs, lib, ... }: {
   hm = {
+    imports = [ ./apps.nix ];
+    
     home.packages = with pkgs; [
       discord
       postman
