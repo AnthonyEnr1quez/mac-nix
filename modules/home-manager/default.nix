@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    # ./apps.nix TODO
     ./git
     ./ide
     ./ssh
@@ -45,7 +44,7 @@
 
     # gnupg.enable = true;
     # jq.enable = true;
-    
+
     # ## compare
     # htop.enable = true;
     # btm.enable = true;

@@ -12,7 +12,7 @@
       upgrade = true;
     };
 
-    brews = [ 
+    brews = [
       # "docker"
     ];
 

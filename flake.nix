@@ -2,28 +2,28 @@
   description = "My Macbook Config (for now...)";
 
   inputs = {
-      # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
-      nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-      stable.url = "github:nixos/nixpkgs/nixos-22.05";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-22.05";
 
-      darwin = {
-        url = "github:lnl7/nix-darwin";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-      nixos-wsl = {
-        url = "github:nix-community/NixOS-WSL";
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
       #   inputs.flake-compat.follows = "flake-compat";
       #   inputs.flake-utils.follows = "flake-utils";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nixos-wsl, ... }: 
+
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nixos-wsl, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -34,7 +34,7 @@
         { system ? "x86_64-darwin"
         , host
         , nixpkgs ? inputs.nixpkgs
-        , stable ? inputs.stable ## TODO is this needed with no overlays?
+        , stable ? inputs.stable # # TODO is this needed with no overlays?
         , baseModules ? [
             home-manager.darwinModules.home-manager
             ./modules/darwin
@@ -70,23 +70,18 @@
           inherit system;
           modules = baseModules ++ extraModules;
           specialArgs = { inherit self inputs nixpkgs host profile; };
-        };  
-  in
-  {
-    darwinConfigurations = {
-      drachenflieger = mkDarwinConfig {
-        host = "drachenflieger";
+        };
+    in
+    {
+      darwinConfigurations = {
+        drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
       };
-    };
 
-    nixosConfigurations = {
-      mothership = mkNixosConfig {
-        host = "mothership";
-        extraModules = [
-          nixos-wsl.nixosModules.wsl 
-          ./modules/wsl
-        ];
+      nixosConfigurations = {
+        mothership = mkNixosConfig {
+          host = "mothership";
+          extraModules = [ nixos-wsl.nixosModules.wsl ./modules/wsl ];
+        };
       };
     };
-  };
 }
