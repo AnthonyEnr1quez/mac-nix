@@ -32,4 +32,10 @@
     # list of acceptable shells in /etc/shells
     shells = with pkgs; [ bash zsh ];
   };
+
+  ## TODO
+  nix.extraOptions = ''
+  #   experimental-features = nix-command flakes
+  # '';
+  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

@@ -56,7 +56,7 @@ with lib;
 
   # Enable nix flakes
   nix.package = pkgs.nixVersions.stable;
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+  # nix.extraOptions = ''
+  #   experimental-features = nix-command flakes
+  # '';
 }
