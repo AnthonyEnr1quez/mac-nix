@@ -37,8 +37,10 @@
     exa.enable = true;
     vim.enable = true;
 
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
+
     # TODO explore more
-    # direnv.enable = true;
     # firefox.enable = true;
     # go.enable = true;
 
