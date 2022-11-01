@@ -17,8 +17,8 @@
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
-      #   inputs.flake-compat.follows = "flake-compat";
-      #   inputs.flake-utils.follows = "flake-utils";
+      # inputs.flake-compat.follows = "flake-compat";
+      # inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -82,6 +82,12 @@
           host = "mothership";
           extraModules = [ nixos-wsl.nixosModules.wsl ./modules/wsl ];
         };
+      };
+
+      # TODO make generic with flakeutils
+      formatter = {
+        x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.nixpkgs-fmt;
+        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       };
     };
 }
