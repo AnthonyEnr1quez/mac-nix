@@ -18,6 +18,7 @@
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
       golang.go
+      mkhl.direnv
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
