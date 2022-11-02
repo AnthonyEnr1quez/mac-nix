@@ -2,8 +2,6 @@
   # TODO default dummy sha: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
   programs.vscode = {
     enable = true;
-    # TODO for wsl
-    package = pkgs.vscodium;
 
     userSettings = {
       "workbench.colorTheme" = "Owlet (Default))";

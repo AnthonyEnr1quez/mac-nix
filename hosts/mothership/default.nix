@@ -1,14 +1,23 @@
-{ host, config, pkgs, ... }: {
+{ host, config, pkgs, lib, ... }: {
   hm = {
     home = {
-      file = { ".vscode-server/server-env-setup".source = ./server-env-setup; };
 
       packages = with pkgs; [
         htop
         neofetch
         cowsay
       ];
+
+      activation.installExtensions = with lib.hm.dag.entryAfter [ "writeBoundary" ]; ''
+        if [ -L /home/ant/.vscode-server/extensions ] ; then
+            rm -r /home/ant/.vscode-server/extensions
+        fi
+        ln -s /home/ant/.vscode/extensions /home/ant/.vscode-server
+      '';
+
     };
+
+    programs.vscode.package = pkgs.vscode;
 
     # wont bind correctly through hm setting
     programs.zsh.initExtra = ''

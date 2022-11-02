@@ -6,5 +6,7 @@
       discord
       postman
     ];
+
+    programs.vscode.package = pkgs.vscodium;
   };
 }

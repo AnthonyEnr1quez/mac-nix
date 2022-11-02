@@ -21,9 +21,13 @@
       # inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vscode-server = {
+      url = "github:msteen/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nixos-wsl, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -80,7 +84,11 @@
       nixosConfigurations = {
         mothership = mkNixosConfig {
           host = "mothership";
-          extraModules = [ nixos-wsl.nixosModules.wsl ./modules/wsl ];
+          extraModules = [
+            nixos-wsl.nixosModules.wsl
+            vscode-server.nixosModule
+            ./modules/wsl
+          ];
         };
       };
 
