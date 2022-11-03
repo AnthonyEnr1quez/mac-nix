@@ -7,5 +7,6 @@
     wslConf.network.hostname = "${config.host.name}";
     docker-desktop.enable = true;
   };
+
   services.vscode-server.enable = true;
 }

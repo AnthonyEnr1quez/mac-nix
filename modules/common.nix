@@ -33,7 +33,6 @@
     shells = with pkgs; [ bash zsh ];
   };
 
-  ## TODO
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
