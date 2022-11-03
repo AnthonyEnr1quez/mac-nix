@@ -8,17 +8,25 @@
         cowsay
       ];
 
-      # TODO for settings file too?
       activation.installExtensions = with lib.hm.dag.entryAfter [ "writeBoundary" ]; ''
         if [ -L /home/ant/.vscode-server/extensions ] ; then
             rm -r /home/ant/.vscode-server/extensions
         fi
         ln -s /home/ant/.vscode/extensions /home/ant/.vscode-server
+
+        if [ -L /home/ant/.vscode-server/data/Machine/settings.json ] ; then
+            rm -r /home/ant/.vscode-server/data/Machine/settings.json
+        fi
+        ln -s /home/ant/.config/Code/User/settings.json /home/ant/.vscode-server/data/Machine/settings.json
       '';
 
     };
 
-    programs.vscode.package = pkgs.vscode;
+    programs.vscode = {
+      package = pkgs.vscode;
+
+      userSettings."editor.fontFamily" = "Hack";
+    };
 
     # wont bind correctly through hm setting
     programs.zsh.initExtra = ''

@@ -4,10 +4,9 @@
     enable = true;
 
     userSettings = {
-      "workbench.colorTheme" = "Owlet (Default))";
+      "workbench.colorTheme" = "Owlet (Default)";
       "files.autoSave" = "afterDelay";
       "editor.fontSize" = 14;
-      "editor.fontFamily" = "Hack Nerd Font Mono";
       "editor.tabSize" = 2;
       "diffEditor.ignoreTrimWhitespace" = false;
     };
