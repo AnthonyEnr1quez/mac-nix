@@ -47,7 +47,7 @@ printf 'run\tprivate/var/run\n' | sudo tee -a /etc/synthetic.conf
 
 
 # TODO
-1. Investigate the darwin rebuild command for following error
+1. ~~Investigate the darwin rebuild command for following error~~
 ```
 error: not linking environment.etc."nix/nix.conf" because /etc/nix/nix.conf already exists, skipping...
 existing file has unknown content ff08c12813680da98c4240328f828647b67a65ba7aa89c022bd8072cba862cf1, move and activate again to apply
@@ -56,7 +56,7 @@ existing file has unknown content ff08c12813680da98c4240328f828647b67a65ba7aa89c
   - Firefox
 
 3. Figure out how to just build home manager changes
-4. Git Signing Keys
+4. ~~Git Signing Keys~~
 5. kubectl
   - kubeconfig auto into .config
   - .kube folder?
