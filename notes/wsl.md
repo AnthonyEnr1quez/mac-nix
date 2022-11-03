@@ -49,7 +49,3 @@ test vscode
 
 run install after and it works with mothership! ??
 - it reverted?
-
-
-#### TODO
-move .wget-hsts to .config
