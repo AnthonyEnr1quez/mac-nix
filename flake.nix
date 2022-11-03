@@ -1,5 +1,5 @@
 {
-  description = "My Macbook Config (for now...)";
+  description = "dotfiles";
 
   inputs = {
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";

@@ -1,9 +1,4 @@
-# mac-nix
+# dotfiles
 
-To rebuild after changes
-
-`darwin-rebuild switch --flake .`
-
-To update flake
-
-`nix --experimental-features 'nix-command flakes' flake`
+Mac command: `darwin-rebuild switch --flake .`
+WSL command: `sudo nixos-rebuild switch --flake .`
