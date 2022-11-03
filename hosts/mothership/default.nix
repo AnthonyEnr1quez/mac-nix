@@ -8,6 +8,7 @@
         cowsay
       ];
 
+      # TODO for settings file too?
       activation.installExtensions = with lib.hm.dag.entryAfter [ "writeBoundary" ]; ''
         if [ -L /home/ant/.vscode-server/extensions ] ; then
             rm -r /home/ant/.vscode-server/extensions
