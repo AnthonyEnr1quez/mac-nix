@@ -15,13 +15,13 @@ existing file has unknown content ff08c12813680da98c4240328f828647b67a65ba7aa89c
   - .kube folder?
   - kubectl aliases from zshrc
 
-6. Dock config, use dock util?
+6. Dock config, use dock util? https://github.com/AnthonyEnr1quez/macOS-playbook/tree/main/roles/dock
 7. Dir colors, needed anymore when using exa?, config exa?
 8. Git config
   - lfs
   - ssh instead of
 9. Go settings (root, path)
-10. Jetbrains
+10. Jetbrains https://github.com/AnthonyEnr1quez/macOS-playbook/tree/main/roles/jetbrains
   - install
   - keybindings
   - plugins
