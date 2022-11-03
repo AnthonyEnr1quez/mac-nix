@@ -6,7 +6,6 @@ abbr gfo="git fetch origin && git checkout main && git rebase origin/main"
 abbr gfu="git fetch upstream && git checkout main && git rebase upstream/main"
 abbr gitpurge="git fetch --all -p; git branch -vv | grep \": gone]\" | awk \"{ print \$1 }\" | xargs -n 1 git branch -D"
 abbr gp="git push"
-abbr gpsu="git branch --show-current| xargs git push --set-upstream origin"
 abbr gs="git status -sb"
 
 # maven

@@ -12,6 +12,7 @@
         format = "ssh";
         ssh.allowedSignersFile = toString (pkgs.writeText "allowed_signers" "");
       };
+      push.autoSetupRemote = true;
     };
 
     signing = {
