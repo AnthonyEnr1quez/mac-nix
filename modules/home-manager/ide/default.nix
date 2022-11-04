@@ -16,6 +16,7 @@
       bbenoist.nix
       golang.go
       mkhl.direnv
+      _2gua.rainbow-brackets
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
@@ -28,6 +29,12 @@
         publisher = "itsjonq";
         version = "0.1.22";
         sha256 = "LUlMX8HAw/34PGQEAwI0y4K0pJ1nilv2oVycC7+zeR4=";
+      }
+      {
+        name = "vscode-json5";
+        publisher = "mrmlnc";
+        version = "1.0.0";
+        sha256 = "XJmlUuKiAWqzvT7tawVY5NHsnUL+hsAjJbrcmxDe8C0=";
       }
     ];
   };
