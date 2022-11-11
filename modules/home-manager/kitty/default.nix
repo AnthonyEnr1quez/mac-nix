@@ -21,6 +21,8 @@
       tab_bar_edge = "top";
       tab_bar_style = "separator";
       tab_title_template = "{title}: {tab.active_wd}";
+
+      # https://www.ditig.com/256-colors-cheat-sheet
       active_tab_foreground =   "#000";
       active_tab_background =  "#875fd7";
       active_tab_font_style =  "bold-italic";

@@ -9,6 +9,7 @@
       "editor.fontSize" = 14;
       "editor.tabSize" = 2;
       "diffEditor.ignoreTrimWhitespace" = false;
+      "update.mode" = "none";
     };
 
     mutableExtensionsDir = false;
