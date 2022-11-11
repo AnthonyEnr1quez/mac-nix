@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: {
   hm = {
-    imports = [ ./apps.nix ];
+    imports = [ ./apps.nix ../../modules/home-manager/kitty ];
 
     home.packages = with pkgs; [
       discord
@@ -12,6 +12,6 @@
 
       userSettings."editor.fontFamily" = "Hack Nerd Font Mono";
     };
-    
+
   };
 }
