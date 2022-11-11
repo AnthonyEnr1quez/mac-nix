@@ -14,6 +14,7 @@
 
     brews = [
       # "docker"
+      # "ext4fuse" # needed w/ macfuse
     ];
 
     taps = [
