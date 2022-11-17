@@ -23,9 +23,9 @@
       tab_title_template = "{title}: {tab.active_wd}";
 
       # https://www.ditig.com/256-colors-cheat-sheet
-      active_tab_foreground =   "#000";
-      active_tab_background =  "#875fd7";
-      active_tab_font_style =  "bold-italic";
+      active_tab_foreground = "#000";
+      active_tab_background = "#875fd7";
+      active_tab_font_style = "bold-italic";
       inactive_tab_foreground = "#444";
       inactive_tab_background = "#af87d7";
       inactive_tab_font_style = "normal";

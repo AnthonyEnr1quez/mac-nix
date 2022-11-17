@@ -14,6 +14,11 @@
       };
       pull.ff = "only";
       push.autoSetupRemote = true;
+      url = {
+        "git@github.com:" = {
+          insteadOf = "https://github.com/";
+        };
+      };
     };
 
     signing = {
