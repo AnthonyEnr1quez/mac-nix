@@ -1,9 +1,9 @@
 name: Update flake lock
 
 on:
-  workflow_dispatch: # allows manual triggering
-  # schedule:
-  #   - cron: '0 0 * * 1,4' # Run twice a week
+  workflow_dispatch:
+  schedule:
+    - cron: "22 9 * * 0"
 
 jobs:
   lockfile:
