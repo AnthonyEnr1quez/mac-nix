@@ -7,23 +7,27 @@ on:
       - main
 
 jobs:
-  build-linux:
+  linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: cachix/install-nix-action@v18
+      - name: Install Nix
+        uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
       - run: nix build .#nixosConfigurations.mothership.config.system.build.toplevel
 
-  build-macos:
+  macos:
     runs-on: macos-12
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: cachix/install-nix-action@v18
+      - name: Install Nix
+        uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
