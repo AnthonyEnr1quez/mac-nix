@@ -23,4 +23,4 @@ jobs:
         name: anthonyenr1quez
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
-    - run: nix flake archive --json | jq -r '.path,(.inputs|to_entries[].value.path)' | cachix push anthonyEnr1quez
+    - run: nix flake archive --json | jq -r '.path,(.inputs|to_entries[].value.path)' | cachix push anthonyenr1quez
