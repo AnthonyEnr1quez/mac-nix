@@ -27,7 +27,6 @@ jobs:
 
   push-macos:
     runs-on: macos-12
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
