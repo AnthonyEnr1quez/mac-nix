@@ -12,6 +12,8 @@
     packages = with pkgs; [
       # ansible
       # coreutils
+      cachix
+      jq # TODO can remove, tmp for cachix testing
       # element-desktop
       # git-crypt
       # gnused TODO figure out how to install as gsed (homebrew?)
