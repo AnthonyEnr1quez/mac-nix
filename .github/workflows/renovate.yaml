@@ -38,11 +38,6 @@ jobs:
           app_id: ${{ secrets.RENOVATE_APP_ID }}
           private_key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
 
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          token: "${{ steps.generate-token.outputs.token }}"
-
       - name: Override default config from dispatch variables
         run: |
           echo "RENOVATE_DRY_RUN=${{ github.event.inputs.dryRun || env.RENOVATE_DRY_RUN }}" >> "${GITHUB_ENV}"
