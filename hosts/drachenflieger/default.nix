@@ -2,6 +2,8 @@
   hm = {
     imports = [ ./apps.nix ../../modules/home-manager/kitty ];
 
+    disabledModules = [ "targets/darwin/linkapps.nix" ];
+
     home.packages = with pkgs; [
       discord
       postman
