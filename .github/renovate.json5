@@ -16,5 +16,6 @@
   },
   "nix": {
     "enabled": true
-  }
+  },
+  "baseBranches": ["renovate"]
 }
