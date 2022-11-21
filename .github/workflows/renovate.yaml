@@ -16,10 +16,10 @@ on:
   push:
     branches:
       # - main
-      - renovate
-  #   paths:
-  #     - ".github/renovate.json5"
-  #     - ".github/renovate/**.json5"
+      - feat/renovate-gh-actions
+    paths:
+      - ".github/renovate.json5"
+      - ".github/renovate/**.json5"
 
 env:
   LOG_LEVEL: debug
