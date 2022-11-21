@@ -13,9 +13,10 @@ on:
         required: false
   # schedule:
   #  - cron: "22 9 * * 0"
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      # - main
+      - renovate
   #   paths:
   #     - ".github/renovate.json5"
   #     - ".github/renovate/**.json5"
