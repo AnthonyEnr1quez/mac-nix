@@ -12,5 +12,11 @@
   "gitAuthor": "anthonyenr1quez-renovate[bot] <117547040+anthonyenr1quez-renovate[bot]@users.noreply.github.com>",
   "onboarding": false,
   "requireConfig": "optional",
-  "commitBodyTable": true
+  "commitBodyTable": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+  },
+  "nix": {
+    "enabled": true
+  }
 }
