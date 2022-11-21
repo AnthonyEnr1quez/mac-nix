@@ -2,6 +2,7 @@
 # Ref: https://github.com/LnL7/nix-darwin/issues/214
 # Ref: https://github.com/nix-community/home-manager/issues/1341
 # Ref: https://github.com/nix-community/home-manager/issues/1341#issuecomment-1301534516
+# Ref (using aliases instead): https://github.com/midchildan/dotfiles/blob/472258f8f07b81829c87baf69d7fcf4294cf1aab/home/modules/linkapps.nix
 { config, lib, pkgs, ... }:
 let
   appEnv = pkgs.buildEnv {
