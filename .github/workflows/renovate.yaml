@@ -16,7 +16,7 @@ on:
   push:
     branches:
       # - main
-      - renovate
+      - renovate-nix
   #   paths:
   #     - ".github/renovate.json5"
   #     - ".github/renovate/**.json5"
