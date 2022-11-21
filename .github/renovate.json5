@@ -12,6 +12,5 @@
   "gitAuthor": "anthonyenr1quez-renovate[bot] <117547040+anthonyenr1quez-renovate[bot]@users.noreply.github.com>",
   "onboarding": false,
   "requireConfig": "optional",
-  "commitBodyTable": true,
-  "baseBranches" : ["feat/renovate-gh-actions"]
+  "commitBodyTable": true
 }

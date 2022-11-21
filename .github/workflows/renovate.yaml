@@ -11,12 +11,11 @@ on:
         description: "Log-Level"
         default: "debug"
         required: false
-  # schedule:
-  #  - cron: "22 9 * * 0"
+  schedule:
+   - cron: "22 9 * * 0"
   push:
     branches:
-      # - main
-      - feat/renovate-gh-actions
+      - main
     paths:
       - ".github/renovate.json5"
       - ".github/renovate/**.json5"
