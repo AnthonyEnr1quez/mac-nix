@@ -13,10 +13,10 @@
   "onboarding": false,
   "requireConfig": "optional",
   "commitBodyTable": true,
-  "lockFileMaintenance": {
-    "enabled": true,
-  },
-  "nix": {
-    "enabled": true
-  }
+  // "lockFileMaintenance": {
+  //   "enabled": true,
+  // },
+  // "nix": {
+  //   "enabled": true
+  // }
 }
