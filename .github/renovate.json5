@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
+  "platform": "github",
+  "repositories": ["AnthonyEnr1quez/dotfiles"],
+  "username": "anthonyenr1quez-renovate[bot]",
+  "gitAuthor": "anthonyenr1quez-renovate[bot] <117547040+anthonyenr1quez-renovate[bot]@users.noreply.github.com>",
+  "onboarding": false,
+  "requireConfig": "optional",
+  "commitBodyTable": true,
   "lockFileMaintenance": {
     "enabled": true
   },
