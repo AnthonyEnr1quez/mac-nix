@@ -37,6 +37,12 @@
         version = "1.0.0";
         sha256 = "XJmlUuKiAWqzvT7tawVY5NHsnUL+hsAjJbrcmxDe8C0=";
       }
+      {
+        name = "astro-vscode";
+        publisher = "astro-build";
+        version = "0.28.0";
+        sha256 =  "ff4VcgLtaDu8pM2Y+HvvJRxcgsy78T2CILarUMqyuJ0=";
+      }
     ];
   };
 }
