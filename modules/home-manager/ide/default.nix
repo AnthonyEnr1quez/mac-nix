@@ -1,5 +1,4 @@
 { config, pkgs, ... }: {
-  # TODO default dummy sha: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
   programs.vscode = {
     enable = true;
 
@@ -10,6 +9,7 @@
       "editor.tabSize" = 2;
       "diffEditor.ignoreTrimWhitespace" = false;
       "update.mode" = "none";
+      "redhat.telemetry.enabled" = false;
     };
 
     mutableExtensionsDir = false;
@@ -18,6 +18,9 @@
       golang.go
       mkhl.direnv
       _2gua.rainbow-brackets
+      astro-build.astro-vscode
+      ms-kubernetes-tools.vscode-kubernetes-tools
+      redhat.vscode-yaml
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
@@ -36,12 +39,6 @@
         publisher = "mrmlnc";
         version = "1.0.0";
         sha256 = "XJmlUuKiAWqzvT7tawVY5NHsnUL+hsAjJbrcmxDe8C0=";
-      }
-      {
-        name = "astro-vscode";
-        publisher = "astro-build";
-        version = "0.28.0";
-        sha256 =  "ff4VcgLtaDu8pM2Y+HvvJRxcgsy78T2CILarUMqyuJ0=";
       }
     ];
   };
