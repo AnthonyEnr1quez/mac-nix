@@ -8,7 +8,6 @@
       "editor.fontSize" = 14;
       "editor.tabSize" = 2;
       "diffEditor.ignoreTrimWhitespace" = false;
-      "update.mode" = "none";
       "redhat.telemetry.enabled" = false;
     };
 
@@ -17,11 +16,11 @@
       bbenoist.nix
       golang.go
       mkhl.direnv
-      _2gua.rainbow-brackets
       astro-build.astro-vscode
       ms-kubernetes-tools.vscode-kubernetes-tools
       redhat.vscode-yaml
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    ] ++ [ pkgs.vscode-extensions."2gua".rainbow-brackets ]
+     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
         publisher = "alphabotsec";
