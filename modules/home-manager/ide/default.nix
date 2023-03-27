@@ -22,7 +22,7 @@
       ms-kubernetes-tools.vscode-kubernetes-tools
       redhat.vscode-yaml
     ] ++ [ pkgs.vscode-extensions."2gua".rainbow-brackets ]
-     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
         publisher = "alphabotsec";
