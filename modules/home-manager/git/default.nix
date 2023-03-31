@@ -12,6 +12,7 @@
         format = "ssh";
         ssh.allowedSignersFile = toString (pkgs.writeText "allowed_signers" "");
       };
+      init.defaultBranch = "main";
       pull.ff = "only";
       push.autoSetupRemote = true;
       url = {
