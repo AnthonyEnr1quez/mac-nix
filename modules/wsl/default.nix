@@ -1,7 +1,7 @@
 { config, self, ... }: {
   wsl = {
     enable = true;
-    automountPath = "/mnt";
+    wslConf.automount.root = "/mnt";
     defaultUser = "${config.user.name}";
     startMenuLaunchers = true;
     wslConf.network.hostname = "${config.host.name}";
