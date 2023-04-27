@@ -7,6 +7,7 @@
     userSettings = {
       "workbench.colorTheme" = "Owlet (Default)";
       "files.autoSave" = "afterDelay";
+      "editor.bracketPairColorization.enabled" = true;
       "editor.fontSize" = 14;
       "editor.tabSize" = 2;
       "diffEditor.ignoreTrimWhitespace" = false;
@@ -21,8 +22,7 @@
       astro-build.astro-vscode
       ms-kubernetes-tools.vscode-kubernetes-tools
       redhat.vscode-yaml
-    ] ++ [ pkgs.vscode-extensions."2gua".rainbow-brackets ]
-    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
         publisher = "alphabotsec";
