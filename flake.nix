@@ -66,6 +66,27 @@
           specialArgs = { inherit self inputs nixpkgs host profile; };
         };
 
+      ## temp m2 var
+      mkM2DarwinConfig =
+        { system ? "aarch64-darwin"
+        , host
+        , nixpkgs ? inputs.nixpkgs
+        , stable ? inputs.stable # # TODO is this needed with no overlays?
+        , baseModules ? [
+            home-manager.darwinModules.home-manager
+            ./modules/m2-darwin
+            ./hosts
+            ./profiles
+          ]
+        , profile ? "personal"
+        , extraModules ? [ ]
+        }:
+        inputs.darwin.lib.darwinSystem {
+          inherit system;
+          modules = baseModules ++ extraModules;
+          specialArgs = { inherit self inputs nixpkgs host profile; };
+        };
+
       # generate a base nixos configuration with the
       # specified overlays, hardware modules, and any extraModules applied
       mkNixosConfig =
@@ -91,6 +112,7 @@
     {
       darwinConfigurations = {
         drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
+        encarnacion = mkM2DarwinConfig { host = "encarnacion"; };
       };
 
       nixosConfigurations = {
