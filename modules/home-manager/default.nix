@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   imports = [
-    ./git
+    # ./git
     ./ide
-    ./ssh
+    # ./ssh
     ./zsh
   ];
 
