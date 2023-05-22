@@ -1,6 +1,7 @@
 {
   description = "dotfiles";
 
+  # TODO
   # nixConfig = {
   #   substituters = [
   #     "https://cache.nixos.org"
