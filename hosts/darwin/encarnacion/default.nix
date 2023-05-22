@@ -4,4 +4,10 @@
       cowsay
     ];
   };
+
+  homebrew = {
+    casks = [
+      "linearmouse"
+    ];
+  };
 }

@@ -10,6 +10,7 @@
 
   nix.configureBuildUsers = true;
 
+  # TODO
   # nix.settings = {
   #   trusted-substituters = [
   #     "https://cache.nixos.org"

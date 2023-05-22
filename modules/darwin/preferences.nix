@@ -31,11 +31,11 @@
     LaunchServices.LSQuarantine = false;
 
     # TODO these might not work with latest osx
-    loginwindow = {
-      autoLoginUser = "${config.user.name}";
-      GuestEnabled = false;
-      SHOWFULLNAME = false;
-    };
+    # loginwindow = {
+    #   autoLoginUser = "${config.user.name}";
+    #   GuestEnabled = false;
+    #   SHOWFULLNAME = false;
+    # };
 
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";
