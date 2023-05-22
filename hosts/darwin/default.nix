@@ -1,8 +1,10 @@
-{ config, pkgs, lib, ... }: {
-  hm = {
-    # imports = [ ./apps.nix ../../modules/home-manager/kitty ];
-    imports = [ ../../modules/home-manager/kitty ];
+{ host, config, pkgs, lib, ... }: {
+  host.name = host;
 
+  imports = [ ./${host} ];
+
+  hm = {
+    imports = [ ../../modules/home-manager/kitty ];
 
     disabledModules = [ "targets/darwin/linkapps.nix" ];
 
