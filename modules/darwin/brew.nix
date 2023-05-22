@@ -24,6 +24,7 @@
     casks = [
       "alt-tab"
       "firefox-developer-edition"
+      "logi-options-plus"
     ];
   };
 }

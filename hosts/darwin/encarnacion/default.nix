@@ -5,9 +5,9 @@
     ];
   };
 
-  homebrew = {
-    casks = [
-      "linearmouse"
-    ];
-  };
+  # homebrew = {
+  #   casks = [
+  #     "linearmouse"
+  #   ];
+  # };
 }
