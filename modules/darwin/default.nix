@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ../common.nix
-    ./brew.nix
+    # ./brew.nix
     ./preferences.nix
   ];
 

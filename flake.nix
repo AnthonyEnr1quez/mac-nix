@@ -92,7 +92,7 @@
     {
       darwinConfigurations = {
         drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
-        encarnacion = mkDarwinConfig { host = "encarnacion"; system = "aarch64-darwin"; };
+        anthonyenriquez-MacBook-Pro = mkDarwinConfig { host = "anthonyenriquez-MacBook-Pro"; system = "aarch64-darwin"; profile = "work"; };
       };
 
       nixosConfigurations = {
