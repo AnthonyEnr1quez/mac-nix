@@ -15,6 +15,7 @@
     casks = [
       "notion"
       "linear-linear"
+      "postman"
     ];
   };
 }

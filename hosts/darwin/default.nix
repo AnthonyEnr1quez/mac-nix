@@ -4,13 +4,9 @@
   imports = [ ./${host} ];
 
   hm = {
-    imports = [ ../../modules/home-manager/kitty ];
+    imports = [ ../../modules/home-manager/kitty ./apps.nix ];
 
     disabledModules = [ "targets/darwin/linkapps.nix" ];
-
-    home.packages = with pkgs; [
-      postman
-    ];
 
     programs.vscode = {
       package = pkgs.vscodium;
