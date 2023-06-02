@@ -17,6 +17,5 @@
 
       userSettings."editor.fontFamily" = "Hack Nerd Font Mono";
     };
-
   };
 }

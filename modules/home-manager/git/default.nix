@@ -22,11 +22,10 @@
       };
     };
 
-    # TODO
-    # signing = {
-    #   key = "~/.ssh/id_ed25519_github.pub";
-    #   signByDefault = true;
-    # };
+    signing = {
+      key = "~/.ssh/id_ed25519_github.pub";
+      signByDefault = true;
+    };
 
     ignores = [
       ".DS_STORE"
