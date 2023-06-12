@@ -28,8 +28,6 @@
 
     sessionVariables = {
       ABBR_USER_ABBREVIATIONS_FILE = "${config.home.homeDirectory}/.config/zsh/zsh_abbr";
-      KUBECONFIG = "${config.home.homeDirectory}/.config/kube/config";
-      SOPS_AGE_KEY_FILE = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
     };
 
     shellAliases = {

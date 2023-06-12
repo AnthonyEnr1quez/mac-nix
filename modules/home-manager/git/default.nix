@@ -5,8 +5,11 @@
     difftastic.enable = true;
 
     extraConfig = {
+      commit = {
+        gpgSign = true;
+      };
       core = {
-        editor = "vim";
+        editor = "vim --nofork";
       };
       gpg = {
         format = "ssh";
@@ -24,7 +27,6 @@
 
     signing = {
       key = "~/.ssh/id_ed25519_github.pub";
-      signByDefault = true;
     };
 
     ignores = [
