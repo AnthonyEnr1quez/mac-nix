@@ -7,11 +7,6 @@
         terraform
         blackbox
         jetbrains.goland
-
-        # openssl
-        # zstd
-        # rdkafka
-        # pkg-config #todo using flake in mf dir
       ];
 
       sessionPath = [
