@@ -2,9 +2,11 @@
   user.name = "ant";
 
   hm = {
-    programs.git = {
-      userEmail = "32233059+AnthonyEnr1quez@users.noreply.github.com";
-      userName = "AnthonyEnr1quez";
+    programs.zsh = {
+      sessionVariables = {
+        KUBECONFIG = "${config.user.home}/.config/kube/config";
+        SOPS_AGE_KEY_FILE = "${config.user.home}/.config/sops/age/keys.txt";
+      };
     };
   };
 }

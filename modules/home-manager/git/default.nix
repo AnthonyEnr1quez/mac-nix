@@ -5,8 +5,11 @@
     difftastic.enable = true;
 
     extraConfig = {
+      commit = {
+        gpgSign = true;
+      };
       core = {
-        editor = "vim";
+        editor = "vim --nofork";
       };
       gpg = {
         format = "ssh";
@@ -24,11 +27,15 @@
 
     signing = {
       key = "~/.ssh/id_ed25519_github.pub";
-      signByDefault = true;
     };
 
     ignores = [
       ".DS_STORE"
     ];
+
+    aliases = {
+      main-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f3,4";
+      com = "!f(){ git checkout $(git main-branch) $@;}; f";
+    };
   };
 }

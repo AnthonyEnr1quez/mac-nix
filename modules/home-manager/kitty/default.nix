@@ -3,7 +3,7 @@
     enable = true;
 
     settings = {
-      font_family = "Hack Regular Nerd Font";
+      font_family = "Hack Nerd Font";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
@@ -20,7 +20,8 @@
 
       tab_bar_edge = "top";
       tab_bar_style = "separator";
-      tab_title_template = "{title}: {tab.active_wd}";
+      tab_title_template = "{index}: {title}";
+      active_tab_title_template = "{index}: {title.split('/')[-1]}";
 
       # https://www.ditig.com/256-colors-cheat-sheet
       active_tab_foreground = "#000";

@@ -54,7 +54,7 @@
         , baseModules ? [
             home-manager.darwinModules.home-manager
             ./modules/darwin
-            ./hosts
+            ./hosts/darwin
             ./profiles
           ]
         , profile ? "personal"
@@ -76,7 +76,7 @@
         , baseModules ? [
             home-manager.nixosModules.home-manager
             ./modules/nixos
-            ./hosts
+            ./hosts/linux
             ./profiles
           ]
         , profile ? "personal"
@@ -91,6 +91,7 @@
     {
       darwinConfigurations = {
         drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
+        anthonyenriquez-MacBook-Pro = mkDarwinConfig { host = "anthonyenriquez-MacBook-Pro"; system = "aarch64-darwin"; profile = "work"; };
       };
 
       nixosConfigurations = {
@@ -108,6 +109,7 @@
       formatter = {
         x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.nixpkgs-fmt;
         x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
       };
     };
 }
