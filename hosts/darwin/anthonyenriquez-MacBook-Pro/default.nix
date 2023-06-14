@@ -10,8 +10,8 @@
 
         # openssl
         # zstd
-        rdkafka
-        # pkg-config
+        # rdkafka
+        # pkg-config #todo using flake in mf dir
       ];
 
       sessionPath = [
