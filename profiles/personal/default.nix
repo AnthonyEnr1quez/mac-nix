@@ -4,8 +4,8 @@
   hm = {
     programs.zsh = {
       sessionVariables = {
-        KUBECONFIG = "${config.home.homeDirectory}/.config/kube/config";
-        SOPS_AGE_KEY_FILE = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+        KUBECONFIG = "${config.user.home}/.config/kube/config";
+        SOPS_AGE_KEY_FILE = "${config.user.home}/.config/sops/age/keys.txt";
       };
     };
   };
