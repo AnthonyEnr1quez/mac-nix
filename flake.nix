@@ -1,18 +1,17 @@
 {
   description = "dotfiles";
 
-  # TODO
-  # nixConfig = {
-  #   substituters = [
-  #     "https://cache.nixos.org"
-  #     "https://anthonyenr1quez.cachix.org"
-  #   ];
+  nixConfig = {
+    substituters = [
+      "https://cache.nixos.org"
+      "https://anthonyenr1quez.cachix.org"
+    ];
 
-  #   trusted-public-keys = [
-  #     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-  #     "anthonyenr1quez.cachix.org-1:Gclb+0ZEVse0quS5IhHiYRsb9QgZ7oSPRfKPNHOl3eI="
-  #   ];
-  # };
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "anthonyenr1quez.cachix.org-1:Gclb+0ZEVse0quS5IhHiYRsb9QgZ7oSPRfKPNHOl3eI="
+    ];
+  };
 
   inputs = {
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.11-darwin";
