@@ -34,8 +34,8 @@
     ];
 
     aliases = {
-      main-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f3,4";
-      com = "!f(){ git checkout $(git main-branch) $@;}; f";
+      default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f3,4";
+      com = "!f(){ git checkout $(git default-branch) $@;}; f";
     };
   };
 }
