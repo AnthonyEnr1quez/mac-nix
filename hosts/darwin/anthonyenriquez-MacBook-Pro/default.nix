@@ -16,6 +16,9 @@
 
     programs = {
       zsh = {
+        cdpath = [
+          "${config.user.home}/Projects/moov/mf"
+        ];
         profileExtra = ''
           eval "$(/opt/homebrew/bin/brew shellenv)"
         '';
@@ -24,7 +27,7 @@
       go = {
         enable = true;
         goPath = "go";
-        goPrivate = ["github.com/moov-io/*" "github.com/moovfinancial/*"];
+        goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
       };
     };
   };
