@@ -23,6 +23,11 @@
 
             cyrus_sasl
             zstd
+          ] ++ [
+            (writeScriptBin "testing123" ''
+              tmp="bob"
+              echo hello $tmp!
+            '')
           ];
 
           # env vars
