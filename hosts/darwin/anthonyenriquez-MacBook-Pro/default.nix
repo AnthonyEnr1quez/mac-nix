@@ -40,6 +40,7 @@
 
       go = {
         enable = true;
+        package = pkgs.go_1_21;
         goPath = "go";
         goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
       };
