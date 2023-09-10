@@ -35,7 +35,7 @@
     home-manager.enable = true;
 
     bat.enable = true;
-    exa.enable = true;
+    eza.enable = true;
     vim.enable = true;
 
     direnv.enable = true;
