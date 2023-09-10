@@ -33,7 +33,7 @@
     shellAliases = {
       # https://github.com/ibraheemdev/modern-unix
       cat = "bat";
-      ls = "exa -1";
+      ls = "eza -1";
     };
 
     shellGlobalAliases = {
