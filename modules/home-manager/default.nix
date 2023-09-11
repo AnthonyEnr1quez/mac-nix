@@ -41,6 +41,11 @@
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
 
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     # TODO explore more
     # firefox.enable = true;
     # go.enable = true;
