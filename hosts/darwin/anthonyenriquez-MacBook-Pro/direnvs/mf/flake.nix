@@ -12,11 +12,11 @@
 
         bumper = pkgs.buildGoModule rec {
           pname = "bumper";
-          version = "0.3.0";
+          version = "0.4.0";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
             ref = "v${version}";
-            rev = "da5e33b2fd07ba3927004d4106f64d4dce5a2c2a";
+            rev = "5aea0cecb5f946805539880602a9fe40eacc348d";
           };
           doCheck = false;
           vendorSha256 = "sha256-ix72uivcxw2TzYZnifjbjT0sogdZk5PNEEVpfgitJkY=";
@@ -40,11 +40,12 @@
           };
 
         scriptDefs = {
-          simple-script = mkScriptPackage {
-            name = "simple-script";
+          pdev-test = mkScriptPackage {
+            name = "pdev-test";
             deps = [
-              pkgs.cowsay
-              pkgs.ddate
+              bumper
+              pkgs.coreutils
+              pkgs.git
             ];
           };
         };
@@ -66,12 +67,6 @@
             zstd
 
             bumper
-          ] ++ [
-            (writeScriptBin "testing123" ''
-              tmp="bob"
-              echo hello $tmp!
-              which bump
-            '')
           ] ++ scripts;
 
           # env vars
