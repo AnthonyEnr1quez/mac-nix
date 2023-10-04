@@ -48,6 +48,13 @@
               pkgs.git
             ];
           };
+          teardown = mkScriptPackage {
+            name = "teardown";
+            deps = [
+              pkgs.coreutils
+              pkgs.findutils
+            ];
+          };
         };
         scripts = with builtins; (map (key: getAttr key scriptDefs) (attrNames scriptDefs));
 
