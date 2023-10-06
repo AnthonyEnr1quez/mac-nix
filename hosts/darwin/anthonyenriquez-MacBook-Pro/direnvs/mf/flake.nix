@@ -48,6 +48,13 @@
               pkgs.git
             ];
           };
+          pr-comment = mkScriptPackage {
+            name = "pr-comment";
+            deps = [
+              pkgs.jq
+              pkgs.gh
+            ];
+          };
           teardown = mkScriptPackage {
             name = "teardown";
             deps = [
@@ -66,6 +73,7 @@
             pkg-config
             libxml2
             google-cloud-sdk
+            jq
 
             openssl
             openssl.dev
