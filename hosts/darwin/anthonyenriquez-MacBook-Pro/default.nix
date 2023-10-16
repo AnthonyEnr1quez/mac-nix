@@ -1,4 +1,8 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }:
+# let
+#   go_
+# in
+{
   hm = {
     home = {
       packages = with pkgs; [
@@ -40,7 +44,13 @@
 
       go = {
         enable = true;
-        package = pkgs.go_1_21;
+        package = pkgs.go_1_21.overrideAttrs (_: rec {
+          version = "1.21.3";
+          src = pkgs.fetchurl {
+            url = "https://go.dev/dl/go${version}.src.tar.gz";
+            hash = "sha256-GG8rb4yLcE5paCGwmrIEGlwe4T3LwxVqE63PdZMe5Ig=";
+          };
+        });
         goPath = "go";
         goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
       };
