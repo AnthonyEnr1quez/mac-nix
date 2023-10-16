@@ -40,6 +40,13 @@
           };
 
         scriptDefs = {
+          flip = mkScriptPackage {
+            name = "flip";
+            deps = [
+              pkgs.coreutils
+              pkgs.findutils
+            ];
+          };
           pdev-test = mkScriptPackage {
             name = "pdev-test";
             deps = [
@@ -53,13 +60,6 @@
             deps = [
               pkgs.jq
               pkgs.gh
-            ];
-          };
-          teardown = mkScriptPackage {
-            name = "teardown";
-            deps = [
-              pkgs.coreutils
-              pkgs.findutils
             ];
           };
         };
