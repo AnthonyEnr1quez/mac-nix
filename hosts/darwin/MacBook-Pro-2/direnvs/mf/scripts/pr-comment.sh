@@ -24,4 +24,5 @@ if [ "$1" = "-d" ]; then
   echo "$pr_comment"
 else
   gh pr comment $pr_number -b "$pr_comment"
+  gh pr close -R moovfinancial/platform-dev -d $(jq -r '.number' <<< "$pdev_pr_json")
 fi
