@@ -22,6 +22,16 @@
           vendorSha256 = "sha256-ix72uivcxw2TzYZnifjbjT0sogdZk5PNEEVpfgitJkY=";
         };
 
+        librdkafka = pkgs.rdkafka.overrideAttrs (_: rec {
+          version = "2.3.0";
+          src = pkgs.fetchFromGitHub {
+            owner = "confluentinc";
+            repo = "librdkafka";
+            rev = "v${version}";
+            sha256 = "sha256-F67aKmyMmqBVG5sF8ZwqemmfvVi/0bDjaiugKKSipuA=";
+          };
+        });
+
         # Function to create a basic shell script package
         # https://www.ertt.ca/nix/shell-scripts/#org6f67de6
         # https://github.com/ponkila/HomestakerOS/blob/56523feb33a4e797a1a12e9e11321b6d4b6ce635/flake.nix#L39
@@ -69,7 +79,7 @@
       {
         devShells.default = pkgs.mkShellNoCC {
           packages = with pkgs; [
-            rdkafka
+            librdkafka
             pkg-config
             libxml2
             libxml2.dev
