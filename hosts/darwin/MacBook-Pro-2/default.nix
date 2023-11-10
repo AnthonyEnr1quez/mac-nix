@@ -64,5 +64,5 @@
     ];
   };
 
-  system.defaults.LaunchServices.LSQuarantine = true;
+  system.defaults.LaunchServices.LSQuarantine = lib.mkForce true;
 }
