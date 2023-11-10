@@ -72,6 +72,8 @@
             rdkafka
             pkg-config
             libxml2
+            libxml2.dev
+            libxslt # TODO unneeded?
             google-cloud-sdk
             jq
 
