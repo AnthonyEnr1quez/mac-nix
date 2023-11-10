@@ -41,10 +41,10 @@
       go = {
         enable = true;
         package = pkgs.go_1_21.overrideAttrs (_: rec {
-          version = "1.21.3";
+          version = "1.21.4";
           src = pkgs.fetchurl {
             url = "https://go.dev/dl/go${version}.src.tar.gz";
-            hash = "sha256-GG8rb4yLcE5paCGwmrIEGlwe4T3LwxVqE63PdZMe5Ig=";
+            hash = "sha256-R7Jqg9K2WjwcG8rOJztpvuSaentRaKdgTe09JqN714c=";
           };
         });
         goPath = "go";
@@ -63,4 +63,6 @@
       "1password"
     ];
   };
+
+  system.defaults.LaunchServices.LSQuarantine = true;
 }
