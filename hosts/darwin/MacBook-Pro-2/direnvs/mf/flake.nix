@@ -19,7 +19,7 @@
             rev = "5aea0cecb5f946805539880602a9fe40eacc348d";
           };
           doCheck = false;
-          vendorSha256 = "sha256-ix72uivcxw2TzYZnifjbjT0sogdZk5PNEEVpfgitJkY=";
+          vendorHash = "sha256-ix72uivcxw2TzYZnifjbjT0sogdZk5PNEEVpfgitJkY=";
         };
 
         librdkafka = pkgs.rdkafka.overrideAttrs (_: rec {
