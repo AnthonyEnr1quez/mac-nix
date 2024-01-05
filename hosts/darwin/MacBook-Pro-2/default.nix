@@ -54,9 +54,13 @@
   };
 
   homebrew = {
+    taps = [
+      "hashicorp/tap"
+    ];
     casks = [
       "docker"
       "google-drive"
+      "hashicorp-boundary-desktop"
       "linear-linear"
       "notion"
       "postman"
