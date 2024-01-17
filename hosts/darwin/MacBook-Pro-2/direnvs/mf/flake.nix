@@ -12,11 +12,11 @@
 
         bumper = pkgs.buildGoModule rec {
           pname = "bumper";
-          version = "0.4.0";
+          version = "0.4.3";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
-            ref = "v${version}";
-            rev = "5aea0cecb5f946805539880602a9fe40eacc348d";
+            ref = "refs/tags/v${version}";
+            rev = "9830ac1481e2fee102e151f5d34e49299100fab1";
           };
           doCheck = false;
           vendorHash = "sha256-ix72uivcxw2TzYZnifjbjT0sogdZk5PNEEVpfgitJkY=";
