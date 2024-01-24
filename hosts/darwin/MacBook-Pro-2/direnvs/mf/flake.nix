@@ -87,6 +87,8 @@
             google-cloud-sdk
             jq
 
+            gotools
+
             openssl
             openssl.dev
 
