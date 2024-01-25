@@ -72,6 +72,13 @@
               pkgs.gh
             ];
           };
+          prep-deploy = mkScriptPackage {
+            name = "prep-deploy";
+            deps = [
+              pkgs.jq
+              pkgs.gh
+            ];
+          };
         };
         scripts = with builtins; (map (key: getAttr key scriptDefs) (attrNames scriptDefs));
 
