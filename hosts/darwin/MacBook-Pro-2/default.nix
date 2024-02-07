@@ -40,11 +40,11 @@
 
       go = {
         enable = true;
-        package = pkgs.go_1_21.overrideAttrs (_: rec {
-          version = "1.21.6";
+        package = pkgs.go_1_22.overrideAttrs (_: rec {
+          version = "1.22.0";
           src = pkgs.fetchurl {
             url = "https://go.dev/dl/go${version}.src.tar.gz";
-            hash = "sha256-Ekkmpi5F942qu67bnAEdl2MxhqM8I4/8HiUyDAIEYkg=";
+            hash = "sha256-TRlsPUGg1sHfxk0E48wfYIsMQ2vYe3Bgzj4jI04fTVw=";
           };
         });
         goPath = "go";
