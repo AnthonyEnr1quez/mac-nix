@@ -18,7 +18,6 @@
     ];
 
     taps = [
-      "homebrew/cask"
       "homebrew/cask-versions"
     ];
     casks = [
