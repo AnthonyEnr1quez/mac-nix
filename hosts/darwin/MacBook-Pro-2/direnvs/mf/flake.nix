@@ -12,7 +12,7 @@
 
         bumper = pkgs.buildGoModule rec {
           pname = "bumper";
-          version = "0.4.3";
+          version = "0.4.6";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
             ref = "refs/tags/v${version}";
