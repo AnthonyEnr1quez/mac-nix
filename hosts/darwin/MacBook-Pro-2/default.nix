@@ -63,7 +63,6 @@
       "hashicorp-boundary-desktop"
       "linear-linear"
       "notion"
-      "postman"
       "1password"
     ];
   };
