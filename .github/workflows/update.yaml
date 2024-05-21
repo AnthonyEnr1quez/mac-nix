@@ -19,7 +19,13 @@ jobs:
       
       - uses: DeterminateSystems/magic-nix-cache-action@main
       
-      - name: Update flake.lock
+      - name: Update base flake.lock
         uses: DeterminateSystems/update-flake-lock@v21
         with:
           token: ${{ secrets.GH_TOKEN }}
+
+      - name: Update sub flake.lock
+        uses: DeterminateSystems/update-flake-lock@v21
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          path-to-flake-dir: 'hosts/darwin/MacBook-Pro-2/direnvs/mf'
