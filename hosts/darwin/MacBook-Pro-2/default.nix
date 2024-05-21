@@ -36,12 +36,15 @@
         profileExtra = ''
           eval "$(/opt/homebrew/bin/brew shellenv)"
         '';
+        sessionVariables = {
+          GOTOOLCHAIN = "local";
+        };
       };
 
       go = {
         enable = true;
         package = pkgs.go_1_22.overrideAttrs (_: rec {
-          version = "1.22.2";
+          version = "1.22.3";
           src = pkgs.fetchurl {
             url = "https://go.dev/dl/go${version}.src.tar.gz";
             hash = "sha256-N06oKyiexzjpaCZ8rFnH1f8YD5SSJQJUeEsgROkN9ak=";
