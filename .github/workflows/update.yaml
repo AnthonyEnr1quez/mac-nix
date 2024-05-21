@@ -24,10 +24,12 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           branch: update-base-flake-lock
+          pr-title: 'Update base flake.lock'
 
       - name: Update sub flake.lock
         uses: DeterminateSystems/update-flake-lock@v21
         with:
           token: ${{ secrets.GH_TOKEN }}
           branch: update-sub-flake-lock
+          pr-title: 'Update sub flake.lock'
           path-to-flake-dir: 'hosts/darwin/MacBook-Pro-2/direnvs/mf'
