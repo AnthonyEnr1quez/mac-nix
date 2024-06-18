@@ -4,7 +4,7 @@
   imports = [ ./${host} ];
 
   hm = {
-    imports = [ ./apps.nix ../../modules/home-manager/kitty ];
+    imports = [ ../../modules/home-manager/kitty ];
 
     disabledModules = [ "targets/darwin/linkapps.nix" ];
 
