@@ -24,7 +24,7 @@
     };
     mac-app-util = {
       url = "github:hraban/mac-app-util";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs"; # todo, dockutil-3.1.3 breaks on arm
     };
 
     home-manager = {
