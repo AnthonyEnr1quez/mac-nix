@@ -22,6 +22,11 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      # inputs.nixpkgs.follows = "nixpkgs"; # todo, dockutil-3.1.3 breaks on arm
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +44,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nixos-wsl, vscode-server, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -52,7 +57,16 @@
         , nixpkgs ? inputs.nixpkgs
         , stable ? inputs.stable # # TODO is this needed with no overlays?
         , baseModules ? [
+            mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
+            (
+              { pkgs, config, inputs, ... }:
+              {
+                home-manager.sharedModules = [
+                  mac-app-util.homeManagerModules.default
+                ];
+              }
+            )
             ./modules/darwin
             ./hosts/darwin
             ./profiles
