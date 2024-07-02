@@ -6,9 +6,6 @@
   hm = {
     imports = [ ../../modules/home-manager/kitty ];
 
-    # todo wtf is this, can I delete it??
-    disabledModules = [ "targets/darwin/linkapps.nix" ];
-
     programs.vscode = {
       package = pkgs.vscodium;
 
