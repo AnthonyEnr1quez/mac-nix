@@ -21,5 +21,6 @@
     "schedule": [
       "at any time"
     ]
-  }
+  },
+  "ignoreDeps": ["macos-12"]
 }
