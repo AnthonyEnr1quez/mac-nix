@@ -91,8 +91,14 @@
             libxml2
             libxml2.dev
             libxslt # TODO unneeded?
-            google-cloud-sdk
             jq
+
+            (google-cloud-sdk.withExtraComponents
+              (with google-cloud-sdk.components; [
+                gke-gcloud-auth-plugin
+                gcloud-man-pages
+              ])
+            )
 
             gotools
 
