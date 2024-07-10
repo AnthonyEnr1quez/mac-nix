@@ -4,7 +4,10 @@
   imports = [ ./${host} ];
 
   hm = {
-    imports = [ ../../modules/home-manager/kitty ];
+    imports = [
+      ../../modules/home-manager/kitty
+      ../../modules/home-manager/catppuccin
+    ];
 
     programs.vscode = {
       package = pkgs.vscodium;

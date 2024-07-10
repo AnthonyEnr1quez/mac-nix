@@ -30,6 +30,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -43,7 +44,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, nixos-wsl, vscode-server, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -62,6 +63,7 @@
               { pkgs, config, inputs, ... }:
               {
                 home-manager.sharedModules = [
+                  catppuccin.homeManagerModules.catppuccin
                   mac-app-util.homeManagerModules.default
                 ];
               }

@@ -24,11 +24,11 @@
       active_tab_title_template = "{index}: {title.split('/')[-1]}";
 
       # https://www.ditig.com/256-colors-cheat-sheet
-      active_tab_foreground = "#000";
-      active_tab_background = "#875fd7";
+      # active_tab_foreground = "#000";
+      # active_tab_background = "#875fd7";
       active_tab_font_style = "bold-italic";
-      inactive_tab_foreground = "#444";
-      inactive_tab_background = "#af87d7";
+      # inactive_tab_foreground = "#444";
+      # inactive_tab_background = "#af87d7";
       inactive_tab_font_style = "normal";
     };
   };
