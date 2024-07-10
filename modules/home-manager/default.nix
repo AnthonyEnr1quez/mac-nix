@@ -2,6 +2,7 @@
   imports = [
     ./git
     ./ide
+    ./k9s
     ./ssh
     ./zsh
   ];
