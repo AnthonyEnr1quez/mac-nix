@@ -57,6 +57,13 @@
               pkgs.findutils
             ];
           };
+          green-thumb = mkScriptPackage {
+            name = "green-thumb";
+            deps = [
+              pkgs.findutils
+              pkgs.gnused
+            ];
+          };
           pdev-test = mkScriptPackage {
             name = "pdev-test";
             deps = [
