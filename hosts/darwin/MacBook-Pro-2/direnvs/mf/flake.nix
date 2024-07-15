@@ -12,14 +12,14 @@
 
         bumper = pkgs.buildGoModule rec {
           pname = "bumper";
-          version = "0.5.1";
+          version = "0.5.4";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
             ref = "refs/tags/v${version}";
-            rev = "e7d437629282f9b7a532c03d3fd3beb16abb3638";
+            rev = "3030fefede578d202e6906a778a87399b4bf21bb";
           };
           doCheck = false;
-          vendorHash = "sha256-c0haxs1IMhu+/gwocpFO9Lp/MrfhbCE/0CNZYhGDJos=";
+          vendorHash = "sha256-jJBndkRKHdGMa6pVTWNz8EGJIwn9rPAdy+u4RbF57lw=";
         };
 
         librdkafka = pkgs.rdkafka.overrideAttrs (_: rec {
