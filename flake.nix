@@ -31,6 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
+    nur.url = "github:nix-community/NUR";
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -44,7 +45,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -59,12 +60,14 @@
         , baseModules ? [
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
+            # nur.nixosModules.nur # TODO i dont think I need this lol
             (
               { pkgs, config, inputs, ... }:
               {
                 home-manager.sharedModules = [
                   catppuccin.homeManagerModules.catppuccin
                   mac-app-util.homeManagerModules.default
+                  nur.hmModules.nur
                 ];
               }
             )

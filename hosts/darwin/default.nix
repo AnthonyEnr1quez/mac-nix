@@ -7,6 +7,9 @@
     imports = [
       ../../modules/home-manager/kitty
       ../../modules/home-manager/catppuccin
+
+      # temp
+      ../../modules/home-manager/firefox
     ];
 
     programs.vscode = {
