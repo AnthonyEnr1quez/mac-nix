@@ -17,12 +17,9 @@
       # "ext4fuse" # needed w/ macfuse
     ];
 
-    taps = [
-      "homebrew/cask-versions"
-    ];
     casks = [
       "alt-tab"
-      "firefox-developer-edition"
+      "firefox@developer-edition"
       "logi-options-plus"
       "postman"
     ];
