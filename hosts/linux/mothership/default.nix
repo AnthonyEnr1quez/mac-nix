@@ -33,5 +33,18 @@
       bindkey "$terminfo[kcuu1]" history-substring-search-up
       bindkey "$terminfo[kcud1]" history-substring-search-down
     '';
+
+    programs.go = {
+        enable = true;
+        package = pkgs.go_1_22.overrideAttrs (_: rec {
+          version = "1.22.5";
+          src = pkgs.fetchurl {
+            url = "https://go.dev/dl/go${version}.src.tar.gz";
+            hash = "sha256-rJxyPyJJaa7mJLw0/TTJ4T8qIS11xxyAfeZEu0bhEvY=";
+          };
+        });
+        goPath = "go";
+        goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
+      };
   };
 }

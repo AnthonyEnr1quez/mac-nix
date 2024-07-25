@@ -314,13 +314,13 @@
       "locked": {
         "lastModified": 1713958148,
         "narHash": "sha256-8PDNi/dgoI2kyM7uSiU4eoLBqUKoA+3TXuz+VWmuCOc=",
-        "owner": "msteen",
+        "owner": "nix-community",
         "repo": "nixos-vscode-server",
         "rev": "fc900c16efc6a5ed972fb6be87df018bcf3035bc",
         "type": "github"
       },
       "original": {
-        "owner": "msteen",
+        "owner": "nix-community",
         "repo": "nixos-vscode-server",
         "type": "github"
       }
