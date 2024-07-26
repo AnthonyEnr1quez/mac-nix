@@ -34,15 +34,6 @@
           # for some reason, cant override this directly in the flake
           export MACOSX_DEPLOYMENT_TARGET=14.0
         '';
-
-        ".docker/config.json".text = builtins.toJSON {
-          auths = {};
-          credHelpers = {
-            "us-docker.pkg.dev" = "gcloud";
-          };
-          credsStore = "desktop";
-          currentContext = "desktop-linux";
-        };
       };
     };
 
