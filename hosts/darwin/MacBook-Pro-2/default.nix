@@ -47,6 +47,8 @@
         '';
         sessionVariables = {
           GOTOOLCHAIN = "local";
+          # https://github.com/golang/go/issues/61229#issuecomment-1952798326
+          GOFLAGS = "-ldflags=-extldflags=-Wl,-ld_classic";
         };
       };
 
