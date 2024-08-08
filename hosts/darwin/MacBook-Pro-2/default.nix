@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }: {
   hm = {
+    imports = [
+      ../../../modules/home-manager/firefox
+    ];
+    
     home = {
       packages = with pkgs; [
         gh

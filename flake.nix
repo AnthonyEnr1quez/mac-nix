@@ -109,6 +109,7 @@
     {
       darwinConfigurations = {
         drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
+	damascus = mkDarwinConfig { host = "damascus"; system = "aarch64-darwin"; };
         MacBook-Pro-2 = mkDarwinConfig { host = "MacBook-Pro-2"; system = "aarch64-darwin"; profile = "work"; };
       };
 
