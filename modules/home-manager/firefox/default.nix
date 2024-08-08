@@ -26,10 +26,10 @@ in
 
       settings = {
         # disable auto update
-        "app.update.auto" = false;
-        "app.update.service.enabled" = false;
-        "app.update.download.promptMaxAttempts" = 0;
-        "app.update.elevation.promptMaxAttempts" = 0;
+        # "app.update.auto" = false;
+        # "app.update.service.enabled" = false;
+        # "app.update.download.promptMaxAttempts" = 0;
+        # "app.update.elevation.promptMaxAttempts" = 0;
 
         # always show bookmarks
         "browser.toolbars.bookmarks.showInPrivateBrowsing" = true;
