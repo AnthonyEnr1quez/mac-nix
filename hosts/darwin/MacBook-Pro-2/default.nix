@@ -3,7 +3,7 @@
     imports = [
       ../../../modules/home-manager/firefox
     ];
-    
+
     home = {
       packages = with pkgs; [
         gh

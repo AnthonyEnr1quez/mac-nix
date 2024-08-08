@@ -11,23 +11,23 @@
 
   homebrew = {
     casks = [
-#      "balenaetcher"
-#      "bitwarden"
+      #      "balenaetcher"
+      #      "bitwarden"
       # "blobsaver"
-#      "docker" # TODO, can I replace this w/ podman
-#      "flux"
-#      "geekbench"
+      #      "docker" # TODO, can I replace this w/ podman
+      #      "flux"
+      #      "geekbench"
       # "impactor"
       # "insomnia"
       # "keepingyouawake"
-#      "linearmouse"
+      #      "linearmouse"
       # "macfuse"
       "mullvadvpn"
       # "obsidian"
       # "raycast"
       # "sensiblesidebuttons"
-#      "signal"
-#      "steam"
+      #      "signal"
+      #      "steam"
       # "unetbootin"
       # "vlc"
     ];

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 let
   # todo, tag with renovate
   firefox-csshacks = pkgs.fetchFromGitHub {
@@ -34,7 +34,7 @@ in
         # always show bookmarks
         "browser.toolbars.bookmarks.showInPrivateBrowsing" = true;
         "browser.toolbars.bookmarks.visibility" = "always";
-        
+
         "extensions.autoDisableScopes" = 0; # auto-enable extensions
         "extensions.pocket.enabled" = false;
 

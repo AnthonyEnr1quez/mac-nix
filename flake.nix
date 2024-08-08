@@ -60,16 +60,15 @@
         , baseModules ? [
             mac-app-util.darwinModules.default
             home-manager.darwinModules.home-manager
-            # nur.nixosModules.nur # TODO i dont think I need this lol
             (
               { pkgs, config, inputs, ... }:
-              {
-                home-manager.sharedModules = [
-                  catppuccin.homeManagerModules.catppuccin
-                  mac-app-util.homeManagerModules.default
-                  nur.hmModules.nur
-                ];
-              }
+                {
+                  home-manager.sharedModules = [
+                    catppuccin.homeManagerModules.catppuccin
+                    mac-app-util.homeManagerModules.default
+                    nur.hmModules.nur
+                  ];
+                }
             )
             ./modules/darwin
             ./hosts/darwin
@@ -109,7 +108,7 @@
     {
       darwinConfigurations = {
         drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
-	damascus = mkDarwinConfig { host = "damascus"; system = "aarch64-darwin"; };
+        damascus = mkDarwinConfig { host = "damascus"; system = "aarch64-darwin"; };
         MacBook-Pro-2 = mkDarwinConfig { host = "MacBook-Pro-2"; system = "aarch64-darwin"; profile = "work"; };
       };
 
