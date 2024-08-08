@@ -31,6 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
+    nur.url = "github:nix-community/NUR";
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -44,7 +45,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -61,12 +62,13 @@
             home-manager.darwinModules.home-manager
             (
               { pkgs, config, inputs, ... }:
-              {
-                home-manager.sharedModules = [
-                  catppuccin.homeManagerModules.catppuccin
-                  mac-app-util.homeManagerModules.default
-                ];
-              }
+                {
+                  home-manager.sharedModules = [
+                    catppuccin.homeManagerModules.catppuccin
+                    mac-app-util.homeManagerModules.default
+                    nur.hmModules.nur
+                  ];
+                }
             )
             ./modules/darwin
             ./hosts/darwin
@@ -106,6 +108,7 @@
     {
       darwinConfigurations = {
         drachenflieger = mkDarwinConfig { host = "drachenflieger"; };
+        damascus = mkDarwinConfig { host = "damascus"; system = "aarch64-darwin"; };
         MacBook-Pro-2 = mkDarwinConfig { host = "MacBook-Pro-2"; system = "aarch64-darwin"; profile = "work"; };
       };
 

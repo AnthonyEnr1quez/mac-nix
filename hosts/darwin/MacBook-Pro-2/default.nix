@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }: {
   hm = {
+    imports = [
+      ../../../modules/home-manager/firefox
+    ];
+
     home = {
       packages = with pkgs; [
         gh
@@ -34,15 +38,6 @@
           # for some reason, cant override this directly in the flake
           export MACOSX_DEPLOYMENT_TARGET=14.0
         '';
-
-        ".docker/config.json".text = builtins.toJSON {
-          auths = {};
-          credHelpers = {
-            "us-docker.pkg.dev" = "gcloud";
-          };
-          credsStore = "desktop";
-          currentContext = "desktop-linux";
-        };
       };
     };
 
@@ -56,16 +51,18 @@
         '';
         sessionVariables = {
           GOTOOLCHAIN = "local";
+          # https://github.com/golang/go/issues/61229#issuecomment-1952798326
+          GOFLAGS = "-ldflags=-extldflags=-Wl,-ld_classic";
         };
       };
 
       go = {
         enable = true;
         package = pkgs.go_1_22.overrideAttrs (_: rec {
-          version = "1.22.5";
+          version = "1.22.6";
           src = pkgs.fetchurl {
             url = "https://go.dev/dl/go${version}.src.tar.gz";
-            hash = "sha256-rJxyPyJJaa7mJLw0/TTJ4T8qIS11xxyAfeZEu0bhEvY=";
+            hash = "sha256-nkjZnVGYgleZF9gYnBfpjDc84lq667mHcuKScIiZKlE=";
           };
         });
         goPath = "go";

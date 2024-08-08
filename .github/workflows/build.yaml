@@ -51,3 +51,5 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       
       - run: nix build .#darwinConfigurations.MacBook-Pro-2.config.system.build.toplevel
+
+      - run: nix build .#darwinConfigurations.damascus.config.system.build.toplevel
