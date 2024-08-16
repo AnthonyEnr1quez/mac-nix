@@ -19,7 +19,7 @@
 
     casks = [
       "alt-tab"
-      "firefox@developer-edition"
+      # "firefox@developer-edition"
       "logi-options-plus"
       "postman"
     ];

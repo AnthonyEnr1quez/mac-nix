@@ -7,11 +7,38 @@ let
     rev = "9d891a3f9e93ea711284e9d5a4c8e8af16a11196";
     sha256 = "sha256-1bNDvkh3znSXN25i1jNDwPcfPaO/JmtN8yf2/ECX3f4=";
   };
+
+  firefoxDir = "Library/Application\ Support/Firefox";
 in
 {
+  # home.file."${firefoxDir}/profiles.ini".text = ''
+  #   [General]
+  #   StartWithLastProfile=1
+  #   Version=2
+
+  #   [Profile0]
+  #   Default=1
+  #   IsRelative=1
+  #   Name=default
+  #   Path=Profiles/default
+  # '';
+
+  # https://github.com/nix-community/home-manager/issues/3323
+  # https://github.com/nix-community/home-manager/issues/5717
+  home.file = {
+    "${firefoxDir}/profiles.ini".text = ''
+      [InstallCE08E05F30B0DD26]
+      Default=Profiles/default
+      Locked=1
+    '';
+
+    # "".text = ''
+    # ''
+  };
+
   programs.firefox = {
     enable = true;
-    package = null; # using brew
+    package = pkgs.firefox-devedition-bin; # using brew
 
     profiles.default = {
       isDefault = true;
