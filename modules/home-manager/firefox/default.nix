@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
-with lib;
 let
   name = "firefox-dev";
+  ffPkg = pkgs.firefox-devedition-bin;
 
   hasher = pkgs.buildGoModule rec {
     pname = "hasher";
@@ -13,7 +13,7 @@ let
       sha256 = "sha256-7F1KmCJwq0EHfrbHGVV9JSCfhnqJdEGC2zGEHwdQ5E8=";
     };
     doCheck = false;
-    vendorHash = "sha256-t98JO8ahPaZWcHDLBs90Aq6jbxuz7YOcKGq4Me5LSiE="; # todo fake
+    vendorHash = "sha256-t98JO8ahPaZWcHDLBs90Aq6jbxuz7YOcKGq4Me5LSiE=";
   };
 in                    
 let
@@ -28,10 +28,12 @@ let
   firefoxDir = "Library/Application\ Support/Firefox";
   
   installDirHash = builtins.readFile (pkgs.runCommand "getFFHash" { buildInputs = [ hasher ]; } ''
-    mozillainstallhash "${pkgs.firefox-devedition-bin.outPath}/Applications/Firefox Developer Edition.app/Contents/MacOS" > $out
+    mozillainstallhash "${ffPkg.outPath}/Applications/Firefox Developer Edition.app/Contents/MacOS" > $out
   '');
 
   cfg = config.${name};
+
+  inherit (lib) mkIf mkEnableOption;
 in {
   options.${name} = {
     enable = mkEnableOption "firefox developer edition";
@@ -58,7 +60,7 @@ in {
 
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-devedition-bin;
+      package = ffPkg;
 
       profiles.default = {
         isDefault = true;
