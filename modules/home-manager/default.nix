@@ -1,8 +1,10 @@
 { pkgs, ... }: {
   imports = [
+    ./firefox
     ./git
     ./ide
     ./k9s
+    ./langs
     ./ssh
     ./zsh
   ];
@@ -46,6 +48,8 @@
       enable = true;
       enableZshIntegration = true;
     };
+
+    fd.enable = true;
 
     # TODO explore more
     # firefox.enable = true;

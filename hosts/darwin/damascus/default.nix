@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }: {
   hm = {
-    imports = [
-      ../../../modules/home-manager/firefox
-    ];
+    firefox-dev = {
+      enable = true;
+    };
 
     home.packages = with pkgs; [
       discord

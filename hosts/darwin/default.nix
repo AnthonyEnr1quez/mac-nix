@@ -14,5 +14,9 @@
 
       userSettings."editor.fontFamily" = "Hack Nerd Font Mono";
     };
+
+    programs.zsh.profileExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
   };
 }

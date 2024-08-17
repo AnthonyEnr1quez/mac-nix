@@ -21,6 +21,10 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-darwin = {
+      url = "github:bandithedoge/nixpkgs-firefox-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mac-app-util = {
       url = "github:hraban/mac-app-util";
       # inputs.nixpkgs.follows = "nixpkgs"; # todo, dockutil-3.1.3 breaks on arm
@@ -45,7 +49,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, darwin, firefox-darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -63,6 +67,7 @@
             (
               { pkgs, config, inputs, ... }:
                 {
+                  nixpkgs.overlays = [ firefox-darwin.overlay ];
                   home-manager.sharedModules = [
                     catppuccin.homeManagerModules.catppuccin
                     mac-app-util.homeManagerModules.default
