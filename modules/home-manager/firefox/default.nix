@@ -15,7 +15,7 @@ let
     doCheck = false;
     vendorHash = "sha256-t98JO8ahPaZWcHDLBs90Aq6jbxuz7YOcKGq4Me5LSiE=";
   };
-in                    
+in
 let
   # todo, tag with renovate
   firefox-csshacks = pkgs.fetchFromGitHub {
@@ -26,7 +26,7 @@ let
   };
 
   firefoxDir = "Library/Application\ Support/Firefox";
-  
+
   installDirHash = builtins.readFile (pkgs.runCommand "getFFHash" { buildInputs = [ hasher ]; } ''
     mozillainstallhash "${ffPkg.outPath}/Applications/Firefox Developer Edition.app/Contents/MacOS" > $out
   '');
@@ -34,7 +34,8 @@ let
   cfg = config.${name};
 
   inherit (lib) mkIf mkEnableOption;
-in {
+in
+{
   options.${name} = {
     enable = mkEnableOption "firefox developer edition";
   };
