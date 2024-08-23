@@ -1,9 +1,5 @@
 { config, pkgs, lib, ... }: {
   hm = {
-    imports = [
-      ../../../modules/home-manager/firefox
-    ];
-
     home = {
       packages = with pkgs; [
         gh
@@ -20,10 +16,6 @@
             gcloud-man-pages
           ])
         )
-      ];
-
-      sessionPath = [
-        "$GOPATH/bin"
       ];
 
       # direnvs
@@ -49,25 +41,9 @@
         profileExtra = ''
           eval "$(/opt/homebrew/bin/brew shellenv)"
         '';
-        sessionVariables = {
-          GOTOOLCHAIN = "local";
-          # https://github.com/golang/go/issues/61229#issuecomment-1952798326
-          GOFLAGS = "-ldflags=-extldflags=-Wl,-ld_classic";
-        };
       };
 
-      go = {
-        enable = true;
-        package = pkgs.go_1_22.overrideAttrs (_: rec {
-          version = "1.22.6";
-          src = pkgs.fetchurl {
-            url = "https://go.dev/dl/go${version}.src.tar.gz";
-            hash = "sha256-nkjZnVGYgleZF9gYnBfpjDc84lq667mHcuKScIiZKlE=";
-          };
-        });
-        goPath = "go";
-        goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
-      };
+      go.goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
     };
   };
 

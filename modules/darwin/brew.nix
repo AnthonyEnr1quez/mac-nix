@@ -19,8 +19,8 @@
 
     casks = [
       "alt-tab"
-      "firefox@developer-edition"
-      "logi-options-plus"
+      # "firefox@developer-edition"
+      "logi-options+"
       "postman"
     ];
   };
