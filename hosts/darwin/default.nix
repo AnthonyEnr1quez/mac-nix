@@ -9,6 +9,10 @@
       ../../modules/home-manager/catppuccin
     ];
 
+    firefox-dev = {
+      enable = true;
+    };
+
     programs.vscode = {
       package = pkgs.vscodium;
 
