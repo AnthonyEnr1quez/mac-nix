@@ -33,11 +33,22 @@ let
 
   cfg = config.${name};
 
-  inherit (lib) mkIf mkEnableOption;
+  inherit (lib) mkIf mkEnableOption mkOption types;
 in
 {
   options.${name} = {
     enable = mkEnableOption "firefox developer edition";
+
+    bookmarksToolbar = mkOption {
+      description = "show the bookmarks toolbar";
+      type = types.enum [ "always" "never" ];
+      default = "always";
+    };
+    
+    extraExtensions = mkOption {
+      type = types.listOf types.package;
+      default = [ ];
+    };
   };
 
   config = mkIf cfg.enable {
@@ -72,18 +83,25 @@ in
           refined-github
           sidebery
           ublock-origin
-        ];
+        ] ++ cfg.extraExtensions;
 
         settings = {
           # disable auto update
-          # "app.update.auto" = false;
-          # "app.update.service.enabled" = false;
-          # "app.update.download.promptMaxAttempts" = 0;
-          # "app.update.elevation.promptMaxAttempts" = 0;
+          "app.update.auto" = false;
+          "app.update.service.enabled" = false;
+          "app.update.download.promptMaxAttempts" = 0;
+          "app.update.elevation.promptMaxAttempts" = 0;
 
           # always show bookmarks
           "browser.toolbars.bookmarks.showInPrivateBrowsing" = true;
-          "browser.toolbars.bookmarks.visibility" = "always";
+          "browser.toolbars.bookmarks.visibility" = cfg.bookmarksToolbar;
+
+          # i like oreos but
+          "cookiebanners.bannerClicking.enabled" = true;
+          "cookiebanners.cookieInjector.enabled" = true;
+          "cookiebanners.service.enableGlobalRules" = true;
+          "cookiebanners.service.mode" = 1; # 1: reject all, 2: reject all, fall back to accept all
+          "cookiebanners.service.mode.privateBrowsing" = 1;
 
           "extensions.autoDisableScopes" = 0; # auto-enable extensions
           "extensions.pocket.enabled" = false;
