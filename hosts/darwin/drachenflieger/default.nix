@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }: {
   hm = {
+    firefox-dev = {
+      enable = false;
+    };
+
     home.packages = with pkgs; [
       discord
     ];
