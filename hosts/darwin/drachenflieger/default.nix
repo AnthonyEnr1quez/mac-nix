@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }: {
   hm = {
     firefox-dev = {
-      enable = false;
+      enable = lib.mkForce false;
     };
 
     home.packages = with pkgs; [
