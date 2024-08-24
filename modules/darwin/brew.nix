@@ -12,14 +12,9 @@
       upgrade = true;
     };
 
-    brews = [
-      # "docker"
-      # "ext4fuse" # needed w/ macfuse
-    ];
-
     casks = [
       "alt-tab"
-      # "firefox@developer-edition"
+      "docker"
       "logi-options+"
       "postman"
     ];

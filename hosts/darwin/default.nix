@@ -13,14 +13,16 @@
       enable = true;
     };
 
-    programs.vscode = {
-      package = pkgs.vscodium;
+    programs = {
+      vscode = {
+        package = pkgs.vscodium;
 
-      userSettings."editor.fontFamily" = "Hack Nerd Font Mono";
+        userSettings."editor.fontFamily" = "Hack Nerd Font Mono";
+      };
+
+      zsh.profileExtra = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
     };
-
-    programs.zsh.profileExtra = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
   };
 }

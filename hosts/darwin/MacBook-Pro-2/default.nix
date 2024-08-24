@@ -38,9 +38,6 @@
         cdpath = [
           "${config.user.home}/Projects/moov/mf"
         ];
-        profileExtra = ''
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        '';
       };
 
       go.goPrivate = [ "github.com/moov-io/*" "github.com/moovfinancial/*" ];
@@ -52,7 +49,6 @@
       "hashicorp/tap"
     ];
     casks = [
-      "docker"
       "google-drive"
       "hashicorp-boundary-desktop"
       "linear-linear"

@@ -18,25 +18,10 @@
 
   homebrew = {
     casks = [
-      #      "balenaetcher"
-      #      "bitwarden"
-      # "blobsaver"
-      #      "docker" # TODO, can I replace this w/ podman
-      #      "flux"
-      #      "geekbench"
-      # "impactor"
-      # "insomnia"
-      # "keepingyouawake"
-      #      "linearmouse"
-      # "macfuse"
+      "balenaetcher"
+      "bitwarden"
       "mullvadvpn"
-      # "obsidian"
-      # "raycast"
-      # "sensiblesidebuttons"
-      #      "signal"
-      #      "steam"
-      # "unetbootin"
-      # "vlc"
+      "signal"
     ];
   };
 }

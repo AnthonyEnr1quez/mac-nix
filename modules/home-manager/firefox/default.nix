@@ -44,7 +44,7 @@ in
       type = types.enum [ "always" "never" ];
       default = "always";
     };
-    
+
     extraExtensions = mkOption {
       type = types.listOf types.package;
       default = [ ];
