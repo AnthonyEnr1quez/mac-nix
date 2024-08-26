@@ -18,6 +18,10 @@
       init.defaultBranch = "main";
       pull.ff = "only";
       push.autoSetupRemote = true;
+      rerere = {
+        autoupdate = true;
+        enabled = true;
+      };
       url = {
         "git@github.com:" = {
           insteadOf = "https://github.com/";
