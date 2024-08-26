@@ -5,11 +5,14 @@
 
   hm = {
     imports = [
-      ../../modules/home-manager/kitty
       ../../modules/home-manager/catppuccin
     ];
 
     firefox-dev = {
+      enable = true;
+    };
+
+    kitty = {
       enable = true;
     };
 

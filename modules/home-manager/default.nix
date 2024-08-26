@@ -4,6 +4,7 @@
     ./git
     ./ide
     ./k9s
+    ./kitty
     ./langs
     ./ssh
     ./zsh
