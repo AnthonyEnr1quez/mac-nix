@@ -36,6 +36,9 @@
     aliases = {
       default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f3,4";
       com = "!f(){ git checkout $(git default-branch) $@;}; f";
+      last = "log -1 HEAD";
+      aa = "!git add . && git commit --amend --no-edit";
+      amend = "commit --amend";
     };
   };
 }
