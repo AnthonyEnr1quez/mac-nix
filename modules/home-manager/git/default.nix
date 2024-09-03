@@ -43,6 +43,7 @@
       last = "log -1 HEAD";
       aa = "!git add . && git commit --amend --no-edit";
       amend = "commit --amend";
+      poke = "!(git diff --exit-code --quiet && git diff --cached --exit-code --quiet) && git commit --allow-empty -m 'poke' || echo stash or revert any changes for ur poke";
     };
   };
 }
