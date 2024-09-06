@@ -1,0 +1,31 @@
+name: "update-nix-fetchgit"
+
+on:
+  workflow_dispatch:
+  schedule:
+   - cron: "22 9 * * 0"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-nix-fetchgit.yaml"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - run: nix shell nixpkgs#update-nix-fetchgit nixpkgs#fd
+
+      - run: fd .nix --exec update-nix-fetchgit --only-commented
+
+      - run: git diff
