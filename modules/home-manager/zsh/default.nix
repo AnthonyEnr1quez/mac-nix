@@ -3,8 +3,8 @@ let
   ohmyzsh = pkgs.fetchFromGitHub {
     owner = "ohmyzsh";
     repo = "ohmyzsh";
-    rev = "80fa5e137672a529f65a05e396b40f0d133b2432"; # master
-    sha256 = "1s4srg6gk9r0z7yrd9ar3164af11ildxnmk6q8p5dpkwq9j1r7iq";
+    rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d"; # master
+    sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
     sparseCheckout = [
       "plugins/sudo"
       "lib"
