@@ -12,22 +12,23 @@
 
         bumper = pkgs.buildGoModule rec {
           pname = "bumper";
-          version = "unstable-2024-08-26";
+          version = "0.5.6";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
-            rev = "f888b5d97029fd8a48e7e685a3c3718a3cc99ba2";
+            ref = "refs/tags/v${version}";
+            rev = "1c122215b3d00cf15d3e1669c00695fe8e2b4586";
           };
           doCheck = false;
-          vendorHash = "sha256-x3SX13FhdWUQpbil1Eoo6IQSRjbEfZKGeNg+819WNCQ=";
+          vendorHash = "sha256-3BAqRlFlEhme8q6IOFpyFHF9nH2FN19KtS0ChFLbChU=";
         };
 
         librdkafka = pkgs.rdkafka.overrideAttrs (_: rec {
-          version = "unstable-2024-08-30";
+          version = "2.4.0";
           src = pkgs.fetchFromGitHub {
             owner = "confluentinc";
             repo = "librdkafka";
-            rev = "9416dd80fb0dba71ff73a8cb4d2b919f54651006"; # tags/v*
-            sha256 = "027bdj1qi4iyd7x1w4fp3xkzqrsfpg4i02kysckd50b9z0z121fq";
+            rev = "v${version}"; # tags/v*
+            sha256 = "sha256-RLjshOnMmCdlv73M8siIvBZ5kVG3v2XttkLVPU+BHY4=";
           };
         });
 
