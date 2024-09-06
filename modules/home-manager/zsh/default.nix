@@ -84,6 +84,11 @@ in
         file = "lib/git.zsh";
       }
       {
+        name = "async-prompt";
+        src = ohmyzsh;
+        file = "lib/async_prompt.zsh";
+      }
+      {
         name = "prompt_info_functions";
         src = ohmyzsh;
         file = "lib/prompt_info_functions.zsh";
