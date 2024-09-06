@@ -28,4 +28,4 @@ jobs:
         with:
           packages: fd,update-nix-fetchgit
           script: |
-            fd .nix --exec update-nix-fetchgit --only-commented
+            fd .nix --exec update-nix-fetchgit --only-commented || true
