@@ -3,8 +3,8 @@ let
   ohmyzsh = pkgs.fetchFromGitHub {
     owner = "ohmyzsh";
     repo = "ohmyzsh";
-    rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
-    sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+    rev = "80fa5e137672a529f65a05e396b40f0d133b2432"; # master
+    sha256 = "1s4srg6gk9r0z7yrd9ar3164af11ildxnmk6q8p5dpkwq9j1r7iq";
     sparseCheckout = [
       "plugins/sudo"
       "lib"
@@ -68,8 +68,8 @@ in
         src = pkgs.fetchFromGitHub {
           owner = "olets";
           repo = "zsh-abbr";
-          rev = "v4.8.0";
-          sha256 = "diitszKbu530zXbJx4xmfOjLsITE9ucmWdsz9VTXsKg=";
+          rev = "fd26ff115da9767e416d69751e2f17013f1f35d5"; # tags/v*
+          sha256 = "00bnnsi71l8mw202dxkx9bfcx1m9sp6x3qn38vx71wfjfi7cwwib";
         };
         file = "zsh-abbr.plugin.zsh";
       }
@@ -103,8 +103,8 @@ in
         src = pkgs.fetchFromGitHub {
           owner = "jonmosco";
           repo = "kube-ps1";
-          rev = "c432ec18b81a03cff835678298650dca74731945";
-          sha256 = "DCGv601yzLCvEiPRNUzT4DNKIt6jlCGtPZdq5/wmY4g=";
+          rev = "0391b238d903022dd78b40be4f2fb5bba96cc0f3"; # master
+          sha256 = "0xnjn7cjwcl6i4dr2709aqvmig80v9jbk7cnrh7mn1ph6zygi1d2";
         };
         file = "kube-ps1.sh";
       }

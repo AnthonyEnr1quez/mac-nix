@@ -12,23 +12,22 @@
 
         bumper = pkgs.buildGoModule rec {
           pname = "bumper";
-          version = "0.5.6";
+          version = "unstable-2024-08-26";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
-            ref = "refs/tags/v${version}";
-            rev = "1c122215b3d00cf15d3e1669c00695fe8e2b4586";
+            rev = "f888b5d97029fd8a48e7e685a3c3718a3cc99ba2"; # tags/v*
           };
           doCheck = false;
-          vendorHash = "sha256-3BAqRlFlEhme8q6IOFpyFHF9nH2FN19KtS0ChFLbChU=";
+          vendorHash = "sha256-x3SX13FhdWUQpbil1Eoo6IQSRjbEfZKGeNg+819WNCQ=";
         };
 
         librdkafka = pkgs.rdkafka.overrideAttrs (_: rec {
-          version = "2.4.0";
+          version = "unstable-2024-08-30";
           src = pkgs.fetchFromGitHub {
             owner = "confluentinc";
             repo = "librdkafka";
-            rev = "v${version}";
-            sha256 = "sha256-RLjshOnMmCdlv73M8siIvBZ5kVG3v2XttkLVPU+BHY4=";
+            rev = "9416dd80fb0dba71ff73a8cb4d2b919f54651006"; # tags/v*
+            sha256 = "027bdj1qi4iyd7x1w4fp3xkzqrsfpg4i02kysckd50b9z0z121fq";
           };
         });
 
@@ -37,7 +36,7 @@
         # https://github.com/ponkila/HomestakerOS/blob/56523feb33a4e797a1a12e9e11321b6d4b6ce635/flake.nix#L39
         mkScriptPackage = { name, deps }:
           let
-            scriptPath = ./scripts/${name}.sh;
+            scriptPath = ./scripts + "/${name}.sh";
             script = (pkgs.writeScriptBin name (builtins.readFile scriptPath)).overrideAttrs (old: {
               buildCommand = "${old.buildCommand}\n patchShebangs $out";
             });
