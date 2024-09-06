@@ -15,7 +15,7 @@
           version = "unstable-2024-08-26";
           src = builtins.fetchGit {
             url = "git@github.com:moovfinancial/bumper.git";
-            rev = "f888b5d97029fd8a48e7e685a3c3718a3cc99ba2"; # tags/v*
+            rev = "f888b5d97029fd8a48e7e685a3c3718a3cc99ba2";
           };
           doCheck = false;
           vendorHash = "sha256-x3SX13FhdWUQpbil1Eoo6IQSRjbEfZKGeNg+819WNCQ=";
