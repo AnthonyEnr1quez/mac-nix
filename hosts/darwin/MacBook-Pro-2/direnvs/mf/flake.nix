@@ -23,12 +23,12 @@
         };
 
         librdkafka = pkgs.rdkafka.overrideAttrs (_: rec {
-          version = "2.4.0";
+          version = "unstable-2024-08-30";
           src = pkgs.fetchFromGitHub {
             owner = "confluentinc";
             repo = "librdkafka";
-            rev = "v${version}"; # tags/v*
-            sha256 = "sha256-RLjshOnMmCdlv73M8siIvBZ5kVG3v2XttkLVPU+BHY4=";
+            rev = "9416dd80fb0dba71ff73a8cb4d2b919f54651006"; # tags/v*
+            sha256 = "027bdj1qi4iyd7x1w4fp3xkzqrsfpg4i02kysckd50b9z0z121fq";
           };
         });
 
