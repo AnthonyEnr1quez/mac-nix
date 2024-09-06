@@ -1,4 +1,18 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  ohmyzsh = pkgs.fetchFromGitHub {
+    owner = "ohmyzsh";
+    repo = "ohmyzsh";
+    rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
+    sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
+    sparseCheckout = [
+      "plugins/sudo"
+      "lib"
+      "themes"
+    ];
+  };
+in
+{
   # see also https://github.com/Yumasi/nixos-home/blob/master/zsh.nix#L89
   home.file = {
     ".config/zsh/zsh_abbr".source = ./zsh_abbr;
@@ -61,67 +75,27 @@
       }
       {
         name = "sudo";
-        src = pkgs.fetchFromGitHub {
-          owner = "ohmyzsh";
-          repo = "ohmyzsh";
-          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
-          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          # sparseCheckout = ''
-          #   plugins/sudo
-          # '';
-        };
+        src = ohmyzsh;
         file = "plugins/sudo/sudo.plugin.zsh";
       }
       {
         name = "git";
-        src = pkgs.fetchFromGitHub {
-          owner = "ohmyzsh";
-          repo = "ohmyzsh";
-          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
-          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          # sparseCheckout = ''
-          #   lib/
-          # '';
-        };
+        src = ohmyzsh;
         file = "lib/git.zsh";
       }
       {
         name = "prompt_info_functions";
-        src = pkgs.fetchFromGitHub {
-          owner = "ohmyzsh";
-          repo = "ohmyzsh";
-          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
-          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          # sparseCheckout = ''
-          #   lib/
-          # '';
-        };
+        src = ohmyzsh;
         file = "lib/prompt_info_functions.zsh";
       }
       {
         name = "theme-and-appearance";
-        src = pkgs.fetchFromGitHub {
-          owner = "ohmyzsh";
-          repo = "ohmyzsh";
-          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
-          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          # sparseCheckout = ''
-          #   lib/
-          # '';
-        };
+        src = ohmyzsh;
         file = "lib/theme-and-appearance.zsh";
       }
       {
         name = "crunch";
-        src = pkgs.fetchFromGitHub {
-          owner = "ohmyzsh";
-          repo = "ohmyzsh";
-          rev = "570158e464c9f57ab03c4162b4e6853b2c7c650d";
-          sha256 = "/hOsiudRKAp75PECiNkIV3YVno6PzWZ+Y9wbw75QipM=";
-          # sparseCheckout = ''
-          #   themes/
-          # '';
-        };
+        src = ohmyzsh;
         file = "themes/crunch.zsh-theme";
       }
       {
