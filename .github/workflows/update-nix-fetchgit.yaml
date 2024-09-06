@@ -24,8 +24,9 @@ jobs:
 
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
-      - run: nix shell nixpkgs#update-nix-fetchgit nixpkgs#fd
-
-      - run: fd .nix --exec update-nix-fetchgit --only-commented
-
-      - run: git diff
+      - uses: workflow/nix-shell-action@v3
+        with:
+          packages: fd,update-nix-fetchgit
+          script: |
+            fd .nix --exec update-nix-fetchgit --only-commented
+            git diff
