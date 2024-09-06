@@ -29,4 +29,4 @@ jobs:
           packages: fd,update-nix-fetchgit
           script: |
             fd .nix --exec update-nix-fetchgit --only-commented
-            git diff
+            git diff --name-only origin/main origin/${GITHUB_HEAD_REF}
