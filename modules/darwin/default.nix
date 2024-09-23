@@ -5,6 +5,8 @@
     ./preferences.nix
   ];
 
+  system.stateVersion = 5;
+
   # Make sure the nix daemon always runs
   services.nix-daemon.enable = true;
 
