@@ -5,11 +5,13 @@ let
     repo = "ohmyzsh";
     rev = "367e9381dfae65e020cb5c439818e04ae1dd9423"; # master
     sha256 = "1wd1ndc5pq12l82d3aqwhk28cdm97f0hzbc3y4123q2ln6jhhfpa";
-    sparseCheckout = [
-      "plugins/sudo"
-      "lib"
-      "themes"
-    ];
+    # todo, cant auto update with sparse checkout?
+    # use pkg???
+    # sparseCheckout = [
+    #   "plugins/sudo"
+    #   "lib"
+    #   "themes"
+    # ];
   };
 in
 {
