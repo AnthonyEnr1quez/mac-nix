@@ -11,6 +11,7 @@
   services.nix-daemon.enable = true;
 
   nix.configureBuildUsers = true;
+  ids.gids.nixbld = 30000;
 
   nix.settings = {
     trusted-substituters = [
