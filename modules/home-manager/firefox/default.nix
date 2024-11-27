@@ -87,9 +87,12 @@ in
         settings = {
           # disable auto update
           "app.update.auto" = false;
-          "app.update.service.enabled" = false;
+          "app.update.checkInstallTime" = false;
           "app.update.download.promptMaxAttempts" = 0;
           "app.update.elevation.promptMaxAttempts" = 0;
+          "app.update.service.enabled" = false;
+          "app.update.staging.enabled" = false;
+          "app.update.suppressPrompts" = true;
 
           # always show bookmarks
           "browser.toolbars.bookmarks.showInPrivateBrowsing" = true;
@@ -106,6 +109,7 @@ in
           "extensions.pocket.enabled" = false;
 
           # privacy
+          "app.normandy.enabled" = false;
           "privacy.trackingprotection.enabled" = true;
           "privacy.trackingprotection.socialtracking.enabled" = true;
           "privacy.userContext.enabled" = true;
