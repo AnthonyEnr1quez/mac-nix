@@ -91,7 +91,7 @@
 
       in
       {
-        devShells.default = pkgs.mkShellNoCC {
+        devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             librdkafka
             pkg-config
