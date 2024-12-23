@@ -1,11 +1,10 @@
 { config, pkgs, ... }: {
-  catppuccin.flavor = "mocha";
+  catppuccin = {
+    flavor = "mocha";
 
-  # todo, probably should be where we enable these
-  programs = {
-    bat.catppuccin.enable = true;
-    fzf.catppuccin.enable = true;
-    # k9s.catppuccin.enable = true;
-    kitty.catppuccin.enable = true;
+    bat.enable = true;
+    fzf.enable = true;
+    # k9s.enable = true; # TODO
+    kitty.enable = true;
   };
 }
