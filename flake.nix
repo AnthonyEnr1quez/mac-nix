@@ -35,7 +35,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    nur.url = "github:nix-community/NUR";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -67,11 +70,14 @@
             (
               { pkgs, config, inputs, ... }:
                 {
-                  nixpkgs.overlays = [ firefox-darwin.overlay ];
+                  nixpkgs.overlays = [
+                    firefox-darwin.overlay
+                    nur.overlays.default
+                  ];
                   home-manager.sharedModules = [
                     catppuccin.homeManagerModules.catppuccin
                     mac-app-util.homeManagerModules.default
-                    nur.hmModules.nur
+                    nur.modules.homeManager.default
                   ];
                 }
             )
