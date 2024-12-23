@@ -34,9 +34,9 @@ in
 
         tab_bar_edge = "top";
         tab_bar_style = "separator";
-        tab_title_template = "{index}: {title}";
-        active_tab_title_template = "{index}: {title}";
-        # active_tab_title_template = "{index}: {title.split('/')[-1]}";
+        # tab_title_template = "{index}: {title}";
+        tab_title_template = "{index}: {title.split('/')[-1]}";
+        active_tab_title_template = "{index}: {title.split('/')[-1]}";
 
         # https://www.ditig.com/256-colors-cheat-sheet
         # active_tab_foreground = "#000";
