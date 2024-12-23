@@ -20,8 +20,8 @@ let
   firefox-csshacks = pkgs.fetchFromGitHub {
     owner = "MrOtherGuy";
     repo = "firefox-csshacks";
-    rev = "35f29fd1cb3f1bba012d26ae3d88c7ac1b23b188"; # master
-    sha256 = "0174f69jmgibdjh9g4gj80vyy9zqyzjbm8nmqp4f8wpq45m14sgk";
+    rev = "9987cdb4646a7179e560d8deecae7e2738b4adee"; # master
+    sha256 = "091j6i63dgqdvcqvp36wmmdxygfawkqvpxd9jynk1lrj3w2hcq2x";
   };
 
   firefoxDir = "Library/Application\ Support/Firefox";
