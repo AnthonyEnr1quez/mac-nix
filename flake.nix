@@ -27,14 +27,21 @@
     };
     mac-app-util = {
       url = "github:hraban/mac-app-util";
-      # inputs.nixpkgs.follows = "nixpkgs"; # todo, dockutil-3.1.3 breaks on arm
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "stable";
+      };
+    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
