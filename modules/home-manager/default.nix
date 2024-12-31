@@ -20,6 +20,7 @@
       # element-desktop
       # git-crypt
       # gnused TODO figure out how to install as gsed (homebrew?)
+      ghostty
       # gopass
       # iterm2
       # jetbrains.goland
