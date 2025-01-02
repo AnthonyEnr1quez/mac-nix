@@ -31,6 +31,8 @@ in
 
         theme = "catppuccin-mocha";
 
+        # TODO tab titles
+
         # does not work with full screen apps :(
         keybind = "global:alt+space=toggle_quick_terminal";
         quick-terminal-position = "right";
