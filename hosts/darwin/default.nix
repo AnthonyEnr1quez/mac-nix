@@ -12,6 +12,10 @@
       enable = true;
     };
 
+
+    ghostty = {
+      enable = true;
+    };
     kitty = {
       enable = true;
     };
