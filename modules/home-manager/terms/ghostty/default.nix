@@ -16,7 +16,7 @@ in
     programs.ghostty = {
       enable = true;
       enableZshIntegration = true;
-      installBatSyntax = false; #TODO
+      installBatSyntax = true;
 
       settings = {
         auto-update = "off";
