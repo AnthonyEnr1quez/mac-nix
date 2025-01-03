@@ -22,7 +22,7 @@
       # todo get relative path injected somehow
       file = {
         "Projects/moov/mf/.envrc".text = ''
-          use flake ~/Projects/nix/dotfiles/hosts/darwin/MacBook-Pro-2/direnvs/mf
+          use flake ~/Projects/nix/dotfiles#mf
 
           # fix ld linked errors
           # https://stackoverflow.com/questions/71112682/ld-warning-dylib-was-built-for-newer-macos-version-11-3-than-being-linked-1
