@@ -16,7 +16,12 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
-    flake-utils.url = "github:numtide/flake-utils";
+
+    systems.url = "github:nix-systems/default";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
+    };
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -28,7 +33,9 @@
     };
     mac-app-util = {
       url = "github:hraban/mac-app-util";
+      inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
     };
 
     home-manager = {
@@ -51,11 +58,12 @@
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       # inputs.flake-compat.follows = "flake-compat";
-      # inputs.flake-utils.follows = "flake-utils";
+      inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server = {
       url = "github:msteen/nixos-vscode-server";
+      inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
