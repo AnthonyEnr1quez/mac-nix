@@ -145,7 +145,7 @@
     # The `//` operator takes the union of its two operands. So we are combining multiple attribute sets into one final, big flake.
     //
     flake-utils.lib.eachDefaultSystem (system:
-      let 
+      let
         pkgs = import nixpkgs { inherit system; };
       in
       {
