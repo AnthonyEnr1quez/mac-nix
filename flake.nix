@@ -16,6 +16,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    flake-utils.url = "github:numtide/flake-utils";
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -59,7 +60,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, darwin, firefox-darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
+  outputs = inputs@{ self, nixpkgs, flake-utils, home-manager, nur, darwin, firefox-darwin, mac-app-util, catppuccin, nixos-wsl, vscode-server, ... }:
     let
       isDarwin = system:
         (builtins.elem system inputs.nixpkgs.lib.platforms.darwin);
@@ -140,12 +141,16 @@
           ];
         };
       };
-
-      # TODO make generic with flakeutils
-      formatter = {
-        x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.nixpkgs-fmt;
-        x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
-        aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
-      };
-    };
+    }
+    # The `//` operator takes the union of its two operands. So we are combining multiple attribute sets into one final, big flake.
+    //
+    flake-utils.lib.eachDefaultSystem (system:
+      let 
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShells = import ./shells { inherit pkgs; };
+        formatter = pkgs.nixpkgs-fmt;
+      }
+    );
 }
