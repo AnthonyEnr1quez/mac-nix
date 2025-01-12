@@ -15,6 +15,7 @@ in
   config = mkIf cfg.enable {
     programs.ghostty = {
       enable = true;
+      package = pkgs.nur.repos.gigamonster256.ghostty-darwin;
       enableZshIntegration = true;
       installBatSyntax = true;
 
