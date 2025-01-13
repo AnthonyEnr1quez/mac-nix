@@ -42,8 +42,14 @@
     eza.enable = true;
     vim.enable = true;
 
-    direnv.enable = true;
-    direnv.nix-direnv.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+
+      # Hides the rather large block of text that is usually printed when entering the environment.
+      # https://direnv.net/man/direnv.toml.1.html#codehideenvdiffcode
+      config.global.hide_env_diff = true;
+    };
 
     fzf = {
       enable = true;
