@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
+    ":timezone(America/Chicago)",
     ":disableRateLimiting",
     ":semanticCommits",
     "github>AnthonyEnr1quez/dotfiles//.github/renovate/semanticCommits.json5"
