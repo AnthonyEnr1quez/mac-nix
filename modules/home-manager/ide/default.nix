@@ -22,6 +22,7 @@
       astro-build.astro-vscode
       ms-kubernetes-tools.vscode-kubernetes-tools
       redhat.vscode-yaml
+      hashicorp.terraform
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-eclipse-keybindings";
