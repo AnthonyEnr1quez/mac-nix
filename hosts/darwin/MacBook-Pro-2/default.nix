@@ -46,7 +46,11 @@
 
   homebrew = {
     taps = [
-      "hashicorp/tap"
+      {
+        name = "hashicorp/tap";
+        clone_target = "https://github.com/AnthonyEnr1quez/homebrew-tap.git";
+        force_auto_update = true;
+      }
     ];
     casks = [
       "google-drive"
