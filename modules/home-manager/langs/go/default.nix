@@ -11,11 +11,11 @@
   programs = {
     go = {
       enable = true;
-      package = pkgs.go_1_23.overrideAttrs (_: rec {
-        version = "1.23.6";
+      package = pkgs.go_1_24.overrideAttrs (_: rec {
+        version = "1.24.0";
         src = pkgs.fetchurl {
           url = "https://go.dev/dl/go${version}.src.tar.gz";
-          hash = "sha256-A5xbBOZSedrO7opvcecL0Fz1uAF4K293xuGeLtBREiI=";
+          hash = "sha256-0UEgYUrLKdEryrcr1onyV+tL6eC2+IqPt+Qaxl+FVuU=";
         };
       });
       goPath = "go";
