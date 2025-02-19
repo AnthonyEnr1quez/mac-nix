@@ -8,10 +8,10 @@
   system.stateVersion = 5;
 
   # Make sure the nix daemon always runs
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
-  nix.configureBuildUsers = true;
-  ids.gids.nixbld = 30000;
+  # nix.configureBuildUsers = true;
+  # ids.gids.nixbld = 30000;
 
   nix.settings = {
     trusted-substituters = [
